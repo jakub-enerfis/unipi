@@ -1,1 +1,3105 @@
-[]
+[
+    {
+        "id": "bcfc1592.fd71f8",
+        "type": "tab",
+        "label": "Configuration",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "b728105e.c940f",
+        "type": "tab",
+        "label": "UI",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "3c7e4464.321d3c",
+        "type": "tab",
+        "label": "1.2_To read",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "c911378b.84a6a8",
+        "type": "tab",
+        "label": "1.2_Read Modbus",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "30f53997.8a2b66",
+        "type": "tab",
+        "label": "1.2_Special reads",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "719ef0cd.4627",
+        "type": "tab",
+        "label": "1.2_Digital Inputs",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "fa4618a0.5a1ec8",
+        "type": "tab",
+        "label": "1.2_MQTT Handling",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "b2d5f1b6.dabb4",
+        "type": "tab",
+        "label": "1.2_HTTP request to enectiva",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "a87881c4.212c5",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "",
+        "broker": "mqtt.flespi.io",
+        "port": "8883",
+        "tls": "7d4ef46f.03c40c",
+        "clientid": "enectiva/unipi/0014",
+        "usetls": true,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": false,
+        "birthTopic": "devices/unipi/0014/status",
+        "birthQos": "1",
+        "birthRetain": "true",
+        "birthPayload": "connected",
+        "closeTopic": "devices/unipi/0014/status",
+        "closeQos": "0",
+        "closeRetain": "true",
+        "closePayload": "disconnected (exp)",
+        "willTopic": "devices/unipi/0014/status",
+        "willQos": "1",
+        "willRetain": "true",
+        "willPayload": "disconnected (unexp)"
+    },
+    {
+        "id": "1030a868.839bc8",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Home",
+        "icon": "dashboard"
+    },
+    {
+        "id": "581af5c1.4ce58c",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#1395c6",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#1395c6",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#1395c6",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#39bbec",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#1395c6",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "7afba866.28a7d8",
+        "type": "modbus-client",
+        "z": "",
+        "name": "RS485",
+        "clienttype": "serial",
+        "bufferCommands": true,
+        "stateLogEnabled": true,
+        "tcpHost": "127.0.0.1",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/extcomm/0/0",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "19200",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "500",
+        "unit_id": 2,
+        "commandDelay": 20,
+        "clientTimeout": 1000,
+        "reconnectTimeout": 2000
+    },
+    {
+        "id": "60429a85.e769f4",
+        "type": "ui_group",
+        "z": "",
+        "name": "Read",
+        "tab": "1030a868.839bc8",
+        "order": 2,
+        "disp": true,
+        "width": "8",
+        "collapse": false
+    },
+    {
+        "id": "2a4cc262.c1aebe",
+        "type": "ui_group",
+        "z": "",
+        "name": "System",
+        "tab": "1030a868.839bc8",
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "7d4ef46f.03c40c",
+        "type": "tls-config",
+        "z": "",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "",
+        "servername": "",
+        "verifyservercert": true
+    },
+    {
+        "id": "de825313.221ab",
+        "type": "protobuf-file",
+        "z": "",
+        "protopath": "/home/pi/librarian_protobuf.proto"
+    },
+    {
+        "id": "cd4390dd.51895",
+        "type": "modbus-client",
+        "z": "",
+        "name": "TCP Localhost",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "tcpHost": "127.0.0.1",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "unit_id": "1",
+        "commandDelay": "1",
+        "clientTimeout": "1000",
+        "reconnectTimeout": "2000"
+    },
+    {
+        "id": "dc0b579f.b92fa8",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Charts",
+        "icon": "dashboard",
+        "order": 2
+    },
+    {
+        "id": "4422aaab.90a844",
+        "type": "ui_group",
+        "z": "",
+        "name": "Office",
+        "tab": "dc0b579f.b92fa8",
+        "order": 1,
+        "disp": true,
+        "width": "10",
+        "collapse": false
+    },
+    {
+        "id": "c47610b8.facd",
+        "type": "modbus-client",
+        "z": "",
+        "name": "TCP_Mervis",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "tcpHost": "10.10.8.165",
+        "tcpPort": "509",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "unit_id": 1,
+        "commandDelay": 1,
+        "clientTimeout": 1000,
+        "reconnectTimeout": 2000
+    },
+    {
+        "id": "d7b1feaf.f2574",
+        "type": "modbus-client",
+        "z": "",
+        "name": "jakub_pc",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "tcpHost": "10.10.8.167",
+        "tcpPort": "503",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "unit_id": "1",
+        "commandDelay": "1",
+        "clientTimeout": "1000",
+        "reconnectTimeout": "2000"
+    },
+    {
+        "id": "a3a34d61.25b1f",
+        "type": "debug",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload.data.sn",
+        "x": 600,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "8317f5ee.87e008",
+        "type": "inject",
+        "z": "bcfc1592.fd71f8",
+        "name": "Get UniPI SN",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 180,
+        "y": 200,
+        "wires": [
+            [
+                "debb7dfc.40ee9"
+            ]
+        ]
+    },
+    {
+        "id": "debb7dfc.40ee9",
+        "type": "http request",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "url": "127.0.0.1:8080/json/neuron/1",
+        "tls": "",
+        "x": 370,
+        "y": 200,
+        "wires": [
+            [
+                "5ac3f5ac.e9474c",
+                "a3a34d61.25b1f"
+            ]
+        ]
+    },
+    {
+        "id": "2f39cbf.bb80f34",
+        "type": "comment",
+        "z": "bcfc1592.fd71f8",
+        "name": "Get UniPi's SN",
+        "info": "",
+        "x": 160,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "cd52ca22.6737b8",
+        "type": "inject",
+        "z": "bcfc1592.fd71f8",
+        "name": "Set 1",
+        "topic": "",
+        "payload": "{\"led\":\"2\",\"value\":\"1\"}",
+        "payloadType": "json",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 150,
+        "y": 480,
+        "wires": [
+            [
+                "f38d5b90.860578"
+            ]
+        ]
+    },
+    {
+        "id": "be6308e3.c61028",
+        "type": "inject",
+        "z": "bcfc1592.fd71f8",
+        "name": "Set 0",
+        "topic": "",
+        "payload": "{\"led\":\"2\",\"value\":\"0\"}",
+        "payloadType": "json",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 150,
+        "y": 520,
+        "wires": [
+            [
+                "f38d5b90.860578"
+            ]
+        ]
+    },
+    {
+        "id": "f0853b07.78fba8",
+        "type": "comment",
+        "z": "bcfc1592.fd71f8",
+        "name": "Set UniPi's output LEDs { led:X, value:Y}",
+        "info": "",
+        "x": 240,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "2511a0d8.ca575",
+        "type": "inject",
+        "z": "b728105e.c940f",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 290,
+        "y": 360,
+        "wires": [
+            [
+                "20bcf5eb.2f4cfa",
+                "8f01c115.ca2c2",
+                "770a49b1.f74b18",
+                "9e566ecd.1cde7",
+                "f25890fb.9ba8f",
+                "390be9bb.ea9fc6",
+                "a758df1b.6640f",
+                "77de5c1e.e64584",
+                "49841938.955358",
+                "2a2c09e8.12a5d6"
+            ]
+        ]
+    },
+    {
+        "id": "20bcf5eb.2f4cfa",
+        "type": "ui_text_input",
+        "z": "b728105e.c940f",
+        "name": "unitid",
+        "label": "Unit ID",
+        "group": "60429a85.e769f4",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "mode": "number",
+        "delay": "1",
+        "topic": "unitid",
+        "x": 490,
+        "y": 400,
+        "wires": [
+            [
+                "135253f5.08adac"
+            ]
+        ]
+    },
+    {
+        "id": "8f01c115.ca2c2",
+        "type": "ui_text_input",
+        "z": "b728105e.c940f",
+        "name": "address",
+        "label": "Address (start register)",
+        "group": "60429a85.e769f4",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "mode": "number",
+        "delay": "1",
+        "topic": "address",
+        "x": 500,
+        "y": 440,
+        "wires": [
+            [
+                "135253f5.08adac"
+            ]
+        ]
+    },
+    {
+        "id": "770a49b1.f74b18",
+        "type": "ui_text_input",
+        "z": "b728105e.c940f",
+        "name": "quantity",
+        "label": "Quantity (# of registers to read)",
+        "group": "60429a85.e769f4",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "mode": "number",
+        "delay": "1",
+        "topic": "quantity",
+        "x": 500,
+        "y": 480,
+        "wires": [
+            [
+                "135253f5.08adac"
+            ]
+        ]
+    },
+    {
+        "id": "9e566ecd.1cde7",
+        "type": "ui_dropdown",
+        "z": "b728105e.c940f",
+        "name": "fc",
+        "label": "Function code",
+        "place": "Select option",
+        "group": "60429a85.e769f4",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "options": [
+            {
+                "label": "",
+                "value": 3,
+                "type": "num"
+            },
+            {
+                "label": "",
+                "value": 4,
+                "type": "num"
+            }
+        ],
+        "payload": "",
+        "topic": "fc",
+        "x": 490,
+        "y": 360,
+        "wires": [
+            [
+                "135253f5.08adac"
+            ]
+        ]
+    },
+    {
+        "id": "135253f5.08adac",
+        "type": "function",
+        "z": "b728105e.c940f",
+        "name": "",
+        "func": "// if values don't exist, create it\ncontext.read_fc = context.read_fc || \"3\";\ncontext.read_unitid = context.read_unitid || \"1\";\ncontext.read_address = context.read_address || \"0\";\ncontext.read_quantity = context.read_quantity || \"2\";\ncontext.read_datatype = context.read_datatype || \"float\";\n\nif (msg.topic == \"fc\") {\n    context.read_fc = msg.payload;\n}\nelse if(msg.topic == \"unitid\") {\n    context.read_unitid = msg.payload;\n}\nelse if(msg.topic == \"address\") {\n    context.read_address = msg.payload;\n}\nelse if(msg.topic == \"quantity\") {\n    context.read_quantity = msg.payload;\n}\nelse if(msg.topic == \"datatype\") {\n    flow.set(\"read_datatype\", msg.payload);\n}\n\n\n    // 'datatype': context.read_datatype,\n\nmsg.payload = \n{ \n    'fc': context.read_fc, \n    'unitid': context.read_unitid, \n    'address': context.read_address, \n    'quantity': context.read_quantity,\n} \n\nif(msg.topic == \"trigger_read\") {\n    return msg;\n}\n//else if(msg.topic == \"trigger_write\") {\n//    return [ null, msg ];\n//}\n\nreturn null;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 750,
+        "y": 360,
+        "wires": [
+            [
+                "9ccd8423.f731a8",
+                "d9f2e56e.f59a98",
+                "788dd6aa.132828"
+            ]
+        ],
+        "outputLabels": [
+            "Read"
+        ]
+    },
+    {
+        "id": "9ccd8423.f731a8",
+        "type": "debug",
+        "z": "b728105e.c940f",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 950,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "f25890fb.9ba8f",
+        "type": "ui_button",
+        "z": "b728105e.c940f",
+        "name": "",
+        "group": "60429a85.e769f4",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Read",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "trigger_read",
+        "x": 490,
+        "y": 560,
+        "wires": [
+            [
+                "135253f5.08adac"
+            ]
+        ]
+    },
+    {
+        "id": "d9f2e56e.f59a98",
+        "type": "modbus-flex-getter",
+        "z": "b728105e.c940f",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "logIOActivities": false,
+        "server": "7afba866.28a7d8",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "x": 970,
+        "y": 360,
+        "wires": [
+            [],
+            [
+                "85f6675d.3217e8",
+                "7e1bcbb6.5f1ab4"
+            ]
+        ]
+    },
+    {
+        "id": "85f6675d.3217e8",
+        "type": "function",
+        "z": "b728105e.c940f",
+        "name": "",
+        "func": "let val = 0;\ndatatype = flow.get(\"read_datatype\");\n\nif (datatype == \"int32\") {\n    val = msg.payload.buffer.readInt32BE(0,4);\n} else if (datatype == \"float\") {\n    val = msg.payload.buffer.readFloatBE(0,4);\n} else if (datatype == \"hex\") {\n    val = msg.payload.buffer.toString('hex');\n} else if (datatype == \"int16\") {\n    val = msg.payload.buffer.readInt16BE(0,2);\n}\n// let met = msg.input.payload.meterid;\n// let sui = msg.input.payload.address;\n\nmsg.payload = val;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1230,
+        "y": 360,
+        "wires": [
+            [
+                "ffd32547.af3f78",
+                "5253d02b.354f9"
+            ]
+        ]
+    },
+    {
+        "id": "ffd32547.af3f78",
+        "type": "ui_text",
+        "z": "b728105e.c940f",
+        "group": "60429a85.e769f4",
+        "order": 7,
+        "width": "8",
+        "height": "1",
+        "name": "",
+        "label": "Value",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 1370,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "40db5876.bb7328",
+        "type": "exec",
+        "z": "bcfc1592.fd71f8",
+        "command": "sudo shutdown -r now",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "true",
+        "timer": "",
+        "oldrc": true,
+        "name": "",
+        "x": 620,
+        "y": 780,
+        "wires": [
+            [
+                "a3d86499.14b1d8"
+            ],
+            [
+                "97087d37.871b4"
+            ],
+            [
+                "9dfeeb39.371de8"
+            ]
+        ]
+    },
+    {
+        "id": "af5f0e20.fef9f",
+        "type": "inject",
+        "z": "bcfc1592.fd71f8",
+        "name": "Reboot",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 150,
+        "y": 780,
+        "wires": [
+            [
+                "40db5876.bb7328"
+            ]
+        ]
+    },
+    {
+        "id": "a3d86499.14b1d8",
+        "type": "debug",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 910,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "97087d37.871b4",
+        "type": "debug",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 910,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "9dfeeb39.371de8",
+        "type": "debug",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 910,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "390be9bb.ea9fc6",
+        "type": "ui_dropdown",
+        "z": "b728105e.c940f",
+        "name": "datatype",
+        "label": "Data type",
+        "place": "Select option",
+        "group": "60429a85.e769f4",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "options": [
+            {
+                "label": "Int32 BE",
+                "value": "int32",
+                "type": "str"
+            },
+            {
+                "label": "Float BE",
+                "value": "float",
+                "type": "str"
+            },
+            {
+                "label": "Raw HEX",
+                "value": "hex",
+                "type": "str"
+            },
+            {
+                "label": "Int16 BE",
+                "value": "int16",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "datatype",
+        "x": 500,
+        "y": 520,
+        "wires": [
+            [
+                "135253f5.08adac"
+            ]
+        ]
+    },
+    {
+        "id": "7e1bcbb6.5f1ab4",
+        "type": "debug",
+        "z": "b728105e.c940f",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1230,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "5253d02b.354f9",
+        "type": "debug",
+        "z": "b728105e.c940f",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1370,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "788dd6aa.132828",
+        "type": "ui_text",
+        "z": "b728105e.c940f",
+        "group": "60429a85.e769f4",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Request",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 940,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "a758df1b.6640f",
+        "type": "ui_button",
+        "z": "b728105e.c940f",
+        "name": "",
+        "group": "2a4cc262.c1aebe",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Reboot",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 500,
+        "y": 700,
+        "wires": [
+            [
+                "dd443605.455ca8"
+            ]
+        ]
+    },
+    {
+        "id": "dd443605.455ca8",
+        "type": "link out",
+        "z": "b728105e.c940f",
+        "name": "Reboot",
+        "links": [
+            "a5b547bf.ad71e8"
+        ],
+        "x": 715,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "a5b547bf.ad71e8",
+        "type": "link in",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "links": [
+            "dd443605.455ca8"
+        ],
+        "x": 115,
+        "y": 740,
+        "wires": [
+            [
+                "40db5876.bb7328"
+            ]
+        ]
+    },
+    {
+        "id": "77de5c1e.e64584",
+        "type": "ui_button",
+        "z": "b728105e.c940f",
+        "name": "",
+        "group": "2a4cc262.c1aebe",
+        "order": 3,
+        "width": "3",
+        "height": "1",
+        "passthru": false,
+        "label": "Open ngrok SSH",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 530,
+        "y": 740,
+        "wires": [
+            [
+                "5a6266c9.161748"
+            ]
+        ]
+    },
+    {
+        "id": "49841938.955358",
+        "type": "ui_button",
+        "z": "b728105e.c940f",
+        "name": "",
+        "group": "2a4cc262.c1aebe",
+        "order": 4,
+        "width": "3",
+        "height": "1",
+        "passthru": false,
+        "label": "Kill ngrok SSH",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 520,
+        "y": 780,
+        "wires": [
+            [
+                "83d06b20.e86a08"
+            ]
+        ]
+    },
+    {
+        "id": "5a6266c9.161748",
+        "type": "link out",
+        "z": "b728105e.c940f",
+        "name": "Open ngrok",
+        "links": [
+            "c03ffb31.4f9cd8"
+        ],
+        "x": 715,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "83d06b20.e86a08",
+        "type": "link out",
+        "z": "b728105e.c940f",
+        "name": "Kill ngrok",
+        "links": [
+            "8ddc30eb.d122d"
+        ],
+        "x": 715,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "2a2c09e8.12a5d6",
+        "type": "http request",
+        "z": "b728105e.c940f",
+        "name": "SN",
+        "method": "GET",
+        "ret": "obj",
+        "url": "127.0.0.1:8080/json/neuron/1",
+        "tls": "",
+        "x": 490,
+        "y": 660,
+        "wires": [
+            [
+                "b0330e33.ee3cf"
+            ]
+        ]
+    },
+    {
+        "id": "b0330e33.ee3cf",
+        "type": "change",
+        "z": "b728105e.c940f",
+        "name": "SN",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.data.sn",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 610,
+        "y": 660,
+        "wires": [
+            [
+                "989d4605.6b7c98"
+            ]
+        ]
+    },
+    {
+        "id": "989d4605.6b7c98",
+        "type": "ui_text",
+        "z": "b728105e.c940f",
+        "group": "2a4cc262.c1aebe",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "UniPi SN",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 760,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "e07c1191.c41f9",
+        "type": "ui_text",
+        "z": "b728105e.c940f",
+        "group": "2a4cc262.c1aebe",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "ngrok status",
+        "label": "ngrok status",
+        "format": "{{msg.status.text}}",
+        "layout": "row-spread",
+        "x": 710,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "9caf5fc8.ffb8c",
+        "type": "link in",
+        "z": "b728105e.c940f",
+        "name": "ngrok status",
+        "links": [
+            "eddf1814.12a368"
+        ],
+        "x": 455,
+        "y": 820,
+        "wires": [
+            [
+                "e07c1191.c41f9"
+            ]
+        ]
+    },
+    {
+        "id": "9fba27c7.32f578",
+        "type": "ui_text",
+        "z": "b728105e.c940f",
+        "group": "2a4cc262.c1aebe",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "modbus status",
+        "label": "Modbus status",
+        "format": "{{msg.status.text}}",
+        "layout": "row-spread",
+        "x": 720,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "2f923659.df0dba",
+        "type": "link in",
+        "z": "b728105e.c940f",
+        "name": "ngrok status",
+        "links": [
+            "4b3f19ae.313b98"
+        ],
+        "x": 455,
+        "y": 860,
+        "wires": [
+            [
+                "9fba27c7.32f578"
+            ]
+        ]
+    },
+    {
+        "id": "283fc52e.f923ba",
+        "type": "link in",
+        "z": "b728105e.c940f",
+        "name": "HTTP requests in last hour",
+        "links": [
+            "3db28c.db6a0d74",
+            "dde1b039.23d75",
+            "9a2e24b4.64f0a8"
+        ],
+        "x": 455,
+        "y": 980,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "be10403c.72a1a",
+        "type": "link in",
+        "z": "b728105e.c940f",
+        "name": "ngrok status",
+        "links": [
+            "e2c49c45.339f5",
+            "914d5acf.1c7c28",
+            "a1e860f3.376a4",
+            "787d7bc8.9e6d04"
+        ],
+        "x": 455,
+        "y": 900,
+        "wires": [
+            [
+                "5d341c04.64a854"
+            ]
+        ]
+    },
+    {
+        "id": "5d341c04.64a854",
+        "type": "ui_text",
+        "z": "b728105e.c940f",
+        "group": "2a4cc262.c1aebe",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "mqtt status",
+        "label": "MQTT status",
+        "format": "{{msg.status.text}}",
+        "layout": "row-spread",
+        "x": 710,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "69130bf1.d4bfa4",
+        "type": "function",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "func": "if (msg.payload == \"kill\") {\n    return {\"kill\":\"\"};\n} else {\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 470,
+        "y": 1080,
+        "wires": [
+            [
+                "d255e4f0.2bc128"
+            ]
+        ]
+    },
+    {
+        "id": "d255e4f0.2bc128",
+        "type": "exec",
+        "z": "bcfc1592.fd71f8",
+        "command": "lt -p",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "true",
+        "timer": "",
+        "oldrc": true,
+        "name": "localtunnel",
+        "x": 610,
+        "y": 1080,
+        "wires": [
+            [
+                "fba84e81.e24fc",
+                "9732ab7e.06f8f8"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "fba84e81.e24fc",
+        "type": "debug",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 970,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "9732ab7e.06f8f8",
+        "type": "mqtt out",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "topic": "devices/unipi/0014/localtunnel/status",
+        "qos": "1",
+        "retain": "false",
+        "broker": "a87881c4.212c5",
+        "x": 1050,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "604b4a1a.42e7c4",
+        "type": "mqtt in",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "topic": "devices/unipi/0014/localtunnel/control",
+        "qos": "1",
+        "broker": "a87881c4.212c5",
+        "x": 250,
+        "y": 1080,
+        "wires": [
+            [
+                "69130bf1.d4bfa4"
+            ]
+        ]
+    },
+    {
+        "id": "5a10fe6.ab893",
+        "type": "debug",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 770,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "43a1584d.52bd28",
+        "type": "inject",
+        "z": "bcfc1592.fd71f8",
+        "name": "Get PI temperature",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "600",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "10",
+        "x": 200,
+        "y": 340,
+        "wires": [
+            [
+                "905e4bad.2c1fd8"
+            ]
+        ]
+    },
+    {
+        "id": "905e4bad.2c1fd8",
+        "type": "exec",
+        "z": "bcfc1592.fd71f8",
+        "command": "/opt/vc/bin/vcgencmd measure_temp",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "measure_temp",
+        "x": 400,
+        "y": 340,
+        "wires": [
+            [
+                "f406948.0037a68"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "2c2e6e00.760112",
+        "type": "function",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "func": "if (msg.payload == \"kill\") {\n    return {\"kill\":\"\"};\n} else {\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 470,
+        "y": 1420,
+        "wires": [
+            [
+                "b6947f70.6be77"
+            ]
+        ]
+    },
+    {
+        "id": "3e140505.8ae6ba",
+        "type": "debug",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 970,
+        "y": 1380,
+        "wires": []
+    },
+    {
+        "id": "dd1cb19e.70843",
+        "type": "mqtt out",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "topic": "devices/unipi/0014/ngrok/status",
+        "qos": "1",
+        "retain": "false",
+        "broker": "a87881c4.212c5",
+        "x": 1030,
+        "y": 1420,
+        "wires": []
+    },
+    {
+        "id": "d399f461.4ec898",
+        "type": "mqtt in",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "topic": "devices/unipi/0014/ngrok/control",
+        "qos": "1",
+        "broker": "a87881c4.212c5",
+        "x": 230,
+        "y": 1420,
+        "wires": [
+            [
+                "2c2e6e00.760112"
+            ]
+        ]
+    },
+    {
+        "id": "b6947f70.6be77",
+        "type": "exec",
+        "z": "bcfc1592.fd71f8",
+        "command": " ./ngrok tcp ",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "true",
+        "timer": "",
+        "oldrc": true,
+        "name": "NGROK exec",
+        "x": 620,
+        "y": 1420,
+        "wires": [
+            [
+                "dd1cb19e.70843",
+                "3e140505.8ae6ba"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "58cc147c.2a8f6c",
+        "type": "comment",
+        "z": "bcfc1592.fd71f8",
+        "name": "Get UniPi's temperature",
+        "info": "",
+        "x": 180,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "9ed182e1.746c2",
+        "type": "comment",
+        "z": "bcfc1592.fd71f8",
+        "name": "Open tunnel thru ngrok. In ngrok admin, IP+port can be obtained. USAGE: send `[protocol] [port_number]` e.g. `tcp 22` to specified topic",
+        "info": "",
+        "x": 550,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "c2829a09.7c5cd8",
+        "type": "comment",
+        "z": "bcfc1592.fd71f8",
+        "name": "Open tunnel thru localtunnel. URL is returned to `/status` topic. USAGE: send `[port_number]` to specified topic",
+        "info": "",
+        "x": 470,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "13bbe8a0.be00e7",
+        "type": "status",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "scope": [
+            "b6947f70.6be77"
+        ],
+        "x": 600,
+        "y": 1480,
+        "wires": [
+            [
+                "ef8bbbcb.d48f48"
+            ]
+        ]
+    },
+    {
+        "id": "6402556b.129c6c",
+        "type": "status",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "scope": [
+            "d255e4f0.2bc128"
+        ],
+        "x": 600,
+        "y": 1140,
+        "wires": [
+            [
+                "bace22dd.1c4a6"
+            ]
+        ]
+    },
+    {
+        "id": "b0a7918e.8b87e",
+        "type": "mqtt in",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "topic": "devices/unipi/0014/reboot",
+        "qos": "1",
+        "broker": "a87881c4.212c5",
+        "x": 210,
+        "y": 820,
+        "wires": [
+            [
+                "15e2b752.7829d9"
+            ]
+        ]
+    },
+    {
+        "id": "bace22dd.1c4a6",
+        "type": "function",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "func": "msg.payload = msg.status.text;\nnode.status({text: msg.payload});\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 770,
+        "y": 1140,
+        "wires": [
+            [
+                "9732ab7e.06f8f8",
+                "fba84e81.e24fc"
+            ]
+        ]
+    },
+    {
+        "id": "ef8bbbcb.d48f48",
+        "type": "function",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "func": "msg.payload = msg.status.text;\nnode.status({text: msg.payload});\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 770,
+        "y": 1480,
+        "wires": [
+            [
+                "3e140505.8ae6ba",
+                "dd1cb19e.70843"
+            ]
+        ]
+    },
+    {
+        "id": "49480787.f561b8",
+        "type": "comment",
+        "z": "bcfc1592.fd71f8",
+        "name": "Reboot. USAGE: send 'reboot' to specified topic",
+        "info": "",
+        "x": 280,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "23f206e9.4ebe6a",
+        "type": "inject",
+        "z": "bcfc1592.fd71f8",
+        "name": "Config after strartup",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0",
+        "x": 200,
+        "y": 60,
+        "wires": [
+            [
+                "223eb691.e6c69a"
+            ]
+        ]
+    },
+    {
+        "id": "223eb691.e6c69a",
+        "type": "function",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "func": "global.set('cust_uuid','3f399496-5cf8-4716-b771-9b9c96bee5a1');\nglobal.set('environment','staging'); // can be 'staging' or 'production';\nglobal.set('auth_token','eyJhbGciOiJFUzI1NiJ9.eyJqaXQiOiJhYjlhNTY1YjFhNzUyYjAxIiwic2NwIjoibGEiLCJ2ZXIiOjEsInN1YiI6IjNmMzk5NDk2LTVjZjgtNDcxNi1iNzcxLTliOWM5NmJlZTVhMSJ9._KCy1XQKHVAS3lKA5MsR44TYq6sg3G6TbC1KFw47lRuisFp9TNpakfp-x67jHESNXx255xZF_-MCNFTH5sBF-w');\n\nnode.status({text: \"configured\"});",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 490,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9f1b593e.10b7f8",
+        "type": "comment",
+        "z": "bcfc1592.fd71f8",
+        "name": "After startup config - UUID etc",
+        "info": "",
+        "x": 220,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "15e2b752.7829d9",
+        "type": "function",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "func": "if (msg.payload.toLowerCase() == 'reboot') {\n    return msg;\n} else {\n    node.status({text: \"UNSUCCESSFUL : \" + msg.payload});\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 410,
+        "y": 820,
+        "wires": [
+            [
+                "40db5876.bb7328"
+            ]
+        ]
+    },
+    {
+        "id": "35a2977f.80d638",
+        "type": "link in",
+        "z": "bcfc1592.fd71f8",
+        "name": "LED control",
+        "links": [
+            "b4c714ed.47c018"
+        ],
+        "x": 115,
+        "y": 560,
+        "wires": [
+            [
+                "f38d5b90.860578"
+            ]
+        ]
+    },
+    {
+        "id": "e13185d.983d978",
+        "type": "http request",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "url": "",
+        "tls": "",
+        "x": 650,
+        "y": 520,
+        "wires": [
+            [
+                "a4acb8b2.c05e58"
+            ]
+        ]
+    },
+    {
+        "id": "f38d5b90.860578",
+        "type": "function",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "func": "led = msg.payload.led;\nvalue = msg.payload.value;\n\nmsg = {};\n\nmsg.payload = {\"value\": value.toString()};\nmsg.url = '127.0.0.1:8080/json/led/1_0' + led.toString();\n\nnode.status({text: \"LED #\" + led + \" state \" + value});\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 490,
+        "y": 520,
+        "wires": [
+            [
+                "e13185d.983d978",
+                "99a0b59d.695948"
+            ]
+        ]
+    },
+    {
+        "id": "a4acb8b2.c05e58",
+        "type": "debug",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 830,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "99a0b59d.695948",
+        "type": "debug",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 650,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "f406948.0037a68",
+        "type": "function",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "func": "node.status({text: msg.payload});\n\n// value = msg.payload;\n// value = value.slice(5, -2);\n// value = parseFloat(value);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 590,
+        "y": 340,
+        "wires": [
+            [
+                "5a10fe6.ab893"
+            ]
+        ]
+    },
+    {
+        "id": "5ac3f5ac.e9474c",
+        "type": "function",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "func": "global.set('serno',msg.payload.data.sn.toString());\nnode.status({text: \"serno configured\"});",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 550,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dd0aee28.06fa",
+        "type": "mqtt in",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "topic": "devices/unipi/0014/led",
+        "qos": "1",
+        "broker": "a87881c4.212c5",
+        "x": 200,
+        "y": 600,
+        "wires": [
+            [
+                "32eacd9d.d6b3f2"
+            ]
+        ]
+    },
+    {
+        "id": "216492e3.ccdf0e",
+        "type": "debug",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 570,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "32eacd9d.d6b3f2",
+        "type": "json",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 410,
+        "y": 600,
+        "wires": [
+            [
+                "216492e3.ccdf0e",
+                "f38d5b90.860578"
+            ]
+        ]
+    },
+    {
+        "id": "d3521427.9e20b8",
+        "type": "debug",
+        "z": "fa4618a0.5a1ec8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 810,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "1ac16f77.b5cc71",
+        "type": "mqtt out",
+        "z": "fa4618a0.5a1ec8",
+        "name": "",
+        "topic": "",
+        "qos": "1",
+        "retain": "false",
+        "broker": "a87881c4.212c5",
+        "x": 1070,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "ecdaaa4a.a690f8",
+        "type": "status",
+        "z": "fa4618a0.5a1ec8",
+        "name": "",
+        "scope": [
+            "1ac16f77.b5cc71"
+        ],
+        "x": 840,
+        "y": 360,
+        "wires": [
+            [
+                "914d5acf.1c7c28",
+                "1de52ec1.c7dc21"
+            ]
+        ]
+    },
+    {
+        "id": "914d5acf.1c7c28",
+        "type": "link out",
+        "z": "fa4618a0.5a1ec8",
+        "name": "MQTT status",
+        "links": [
+            "be10403c.72a1a"
+        ],
+        "x": 975,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "1de52ec1.c7dc21",
+        "type": "debug",
+        "z": "fa4618a0.5a1ec8",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1010,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "dc8b84a0.6ae268",
+        "type": "encode",
+        "z": "fa4618a0.5a1ec8",
+        "name": "",
+        "protofile": "de825313.221ab",
+        "protoType": "MQTTDataPoint",
+        "x": 820,
+        "y": 200,
+        "wires": [
+            [
+                "1ac16f77.b5cc71",
+                "4336e6a6.c2c578",
+                "8dad30f.9ef1ed"
+            ]
+        ]
+    },
+    {
+        "id": "ccbf941b.d5fe58",
+        "type": "function",
+        "z": "fa4618a0.5a1ec8",
+        "name": "Prepare MQTT",
+        "func": "incoming_message = msg.payload;\nmsg = {};\n\ncust_uuid = global.get('cust_uuid');\nenvironment = global.get('environment');\n\nsuit = incoming_message.suit.toString();\nmeter_id = incoming_message.meterid.toString();\n\nmsg.payload = {\n    \"time\": incoming_message.time,\n    \"value\": incoming_message.value,\n    \"sender\": \"unipi\"\n}\n\nif (incoming_message.point_type == 'reading'){\n    msg.topic = environment + '/reading/' + cust_uuid + '/' + meter_id + '/' + suit;\n} else {\n    msg.topic = environment + '/data_point/' + cust_uuid + '/' + meter_id + '/' + suit;\n}\n\n\nnode.status({text: \"Last message at \" + msg.payload.time.toString()});\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 600,
+        "y": 200,
+        "wires": [
+            [
+                "dc8b84a0.6ae268",
+                "d3521427.9e20b8"
+            ]
+        ]
+    },
+    {
+        "id": "4336e6a6.c2c578",
+        "type": "debug",
+        "z": "fa4618a0.5a1ec8",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1070,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "8dad30f.9ef1ed",
+        "type": "debug",
+        "z": "fa4618a0.5a1ec8",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "topic",
+        "x": 1080,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "ef17454a.0792d8",
+        "type": "comment",
+        "z": "fa4618a0.5a1ec8",
+        "name": "msg.payload =  { ",
+        "info": "msg.payload = \n{\n    'value': val,\n    'time': time,\n    'meterid': 99999999,\n    'suit': \"1wire\",\n    'point_type': \"data_point\"\n};",
+        "x": 480,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "8bb018d9.704a68",
+        "type": "comment",
+        "z": "fa4618a0.5a1ec8",
+        "name": " 'value': HODNOTA:FLOAT,",
+        "info": "msg.payload = \n{\n    'value': HODNOTA:FLOAT,\n    'time': time,\n    'meterid': 99999999,\n    'suit': \"1wire\",\n    'point_type': \"data_point\"\n};",
+        "x": 530,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "382cbcb9.df79f4",
+        "type": "comment",
+        "z": "fa4618a0.5a1ec8",
+        "name": "'time': CAS,",
+        "info": "msg.payload = \n{\n    'value': val,\n    'time': Math.floor(Date.now() / 1000);,\n    'meterid': 99999999,\n    'suit': \"1wire\",\n    'point_type': \"data_point\"\n};",
+        "x": 490,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "961b6c4b.79086",
+        "type": "comment",
+        "z": "fa4618a0.5a1ec8",
+        "name": "'meterid': METER_ID,",
+        "info": "msg.payload = \n{\n    'value': val,\n    'time': time,\n    'meterid': 99999999,\n    'suit': \"1wire\",\n    'point_type': \"data_point\"\n};",
+        "x": 520,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "5ef55be2.26c2f4",
+        "type": "comment",
+        "z": "fa4618a0.5a1ec8",
+        "name": " 'suit': \"SUIT\",",
+        "info": "msg.payload = \n{\n    'value': val,\n    'time': time,\n    'meterid': 99999999,\n    'suit': \"1wire\",\n    'point_type': \"data_point\"\n};",
+        "x": 490,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "339b47f7.b68d28",
+        "type": "comment",
+        "z": "fa4618a0.5a1ec8",
+        "name": "'point_type': \"data_point\" ",
+        "info": "msg.payload = \n{\n    'value': val,\n    'time': time,\n    'meterid': 99999999,\n    'suit': \"1wire\",\n    'point_type': \"data_point\"\n};",
+        "x": 530,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "df5a6164.893d3",
+        "type": "comment",
+        "z": "fa4618a0.5a1ec8",
+        "name": "}",
+        "info": "msg.payload = \n{\n    'value': val,\n    'time': time,\n    'meterid': 99999999,\n    'suit': \"1wire\",\n    'point_type': \"data_point\"\n};",
+        "x": 450,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "ddf13262.82d41",
+        "type": "modbus-flex-getter",
+        "z": "c911378b.84a6a8",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": true,
+        "logIOActivities": false,
+        "server": "7afba866.28a7d8",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "x": 490,
+        "y": 100,
+        "wires": [
+            [],
+            [
+                "3af24471.7739dc",
+                "8a915edb.9a252"
+            ]
+        ]
+    },
+    {
+        "id": "3af24471.7739dc",
+        "type": "debug",
+        "z": "c911378b.84a6a8",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 770,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "8a915edb.9a252",
+        "type": "function",
+        "z": "c911378b.84a6a8",
+        "name": "Extract value",
+        "func": "node.status({fill:\"grey\",shape:\"dot\",text:\"waiting\"});\n\nif (msg.input.payload.value.datatype == \"int32\") {\n    val = msg.payload.buffer.readInt32BE(0,4);\n    node.status({fill:\"green\",shape:\"dot\",text:\"int32\"});\n} else if (msg.input.payload.value.datatype == \"float\") {\n    val = msg.payload.buffer.readFloatBE(0,4);\n    node.status({fill:\"green\",shape:\"dot\",text:\"float\"});\n} else if (msg.input.payload.value.datatype == \"hex\") {\n    val = msg.payload.buffer.toString('hex');\n    node.status({fill:\"green\",shape:\"dot\",text:\"hex\"});\n} else if (msg.input.payload.value.datatype == \"int16\") {\n    val = msg.payload.buffer.readInt16BE(0,2);\n    node.status({fill:\"green\",shape:\"dot\",text:\"int16\"});\n} else {\n    node.status({fill:\"red\",shape:\"dot\",text:\"unknown datatype\"});\n    return\n}\n\nlet meter_id = msg.input.payload.value.meterid;\nlet suit = msg.input.payload.address;\nlet time = Math.floor(Date.now() / 1000);\nlet point_type = msg.input.payload.value.point_type;\n\nmsg = {};\n\nmsg.payload = \n{\n    'value': val,\n    'time': time,\n    'meterid': meter_id,\n    'suit': suit,\n    'point_type': point_type\n};\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 790,
+        "y": 100,
+        "wires": [
+            [
+                "e02232bd.de84d"
+            ]
+        ]
+    },
+    {
+        "id": "bab94a15.f95808",
+        "type": "function",
+        "z": "3c7e4464.321d3c",
+        "name": "Unit 1 kW",
+        "func": "//{ \n//    value: msg.payload, \n//    'fc': 4,              MODBUS FUNCTION CODE\n//    'unitid': 1,          MODBUS DEVICE ID\n//    'address': 0 ,        START ADDRESS OF THE REGISTER\n//    'quantity': 50        NUMBER OF REGISTERS TO READ\n//    'meterid': '1000',    ENECTIVA IMPORT ID\n//    'suit': '0',          ENECTIVA SUIT\n//    'protocol':'modbus',  PROTOCOL (modbus/mbus)\n//} \n// E.G. Eastron SDM630 has actual power on address 30053 (or 0x34) - therefore the address is 52\n\nmsg.payload = \n{ \n    'fc': 3, \n    'unitid': 1, \n    'address': 8320, \n    'quantity': 2,\n    'value': { \n        'datatype': 'float', \n        'meterid': 18070292,\n        'point_type': 'data_point',\n    }\n} \n\n// msg.payload.value = { 'datatype': 'float', 'meterid': 73130497,};\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 540,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "99890b53.a88638",
+        "type": "inject",
+        "z": "3c7e4464.321d3c",
+        "name": "seconds",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "x": 160,
+        "y": 700,
+        "wires": [
+            [
+                "bab94a15.f95808"
+            ]
+        ]
+    },
+    {
+        "id": "78f0c0b8.082fd",
+        "type": "comment",
+        "z": "3c7e4464.321d3c",
+        "name": "MODBUS RTU",
+        "info": "",
+        "x": 1240,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "7964a530.c0d83c",
+        "type": "inject",
+        "z": "3c7e4464.321d3c",
+        "name": "CRON 15 minutes",
+        "topic": "",
+        "payload": "send",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "*/15 0-23 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 190,
+        "y": 160,
+        "wires": [
+            [
+                "f238f6f9.714348",
+                "29d22bcf.b030a4",
+                "3c87bb0f.833c24"
+            ]
+        ]
+    },
+    {
+        "id": "ded8132d.41b46",
+        "type": "function",
+        "z": "3c7e4464.321d3c",
+        "name": "Unit 1 kWh",
+        "func": "//{ \n//    value: msg.payload, \n//    'fc': 4,              MODBUS FUNCTION CODE\n//    'unitid': 1,          MODBUS DEVICE ID\n//    'address': 0 ,        START ADDRESS OF THE REGISTER\n//    'quantity': 50        NUMBER OF REGISTERS TO READ\n//    'meterid': '1000',    ENECTIVA IMPORT ID\n//    'suit': '0',          ENECTIVA SUIT\n//    'protocol':'modbus',  PROTOCOL (modbus/mbus)\n//} \n// E.G. Eastron SDM630 has actual power on address 30053 (or 0x34) - therefore the address is 52\n\nmsg.payload = \n{ \n    'fc': 3, \n    'unitid': 1, \n    'address': 12288, \n    'quantity': 2,\n    'value': { \n        'datatype': 'float', \n        'meterid': 18070292,\n        'point_type': 'reading',\n    }\n} \n\n// msg.payload.value = { 'datatype': 'float', 'meterid': 73130497,};\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 550,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "60252d70.bf58b4",
+        "type": "link in",
+        "z": "c911378b.84a6a8",
+        "name": "Modbus_reading_in",
+        "links": [
+            "28858951.dd27b6"
+        ],
+        "x": 255,
+        "y": 100,
+        "wires": [
+            [
+                "ddf13262.82d41"
+            ]
+        ]
+    },
+    {
+        "id": "e02232bd.de84d",
+        "type": "link out",
+        "z": "c911378b.84a6a8",
+        "name": "Modbus_reading_out",
+        "links": [
+            "c91f874d.be1658"
+        ],
+        "x": 975,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "28858951.dd27b6",
+        "type": "link out",
+        "z": "3c7e4464.321d3c",
+        "name": "",
+        "links": [
+            "60252d70.bf58b4"
+        ],
+        "x": 955,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "b926c6e3.490bd8",
+        "type": "exec",
+        "z": "30f53997.8a2b66",
+        "command": "/opt/vc/bin/vcgencmd measure_temp",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "measure_temp",
+        "x": 560,
+        "y": 160,
+        "wires": [
+            [
+                "187e8314.a28a2d"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "187e8314.a28a2d",
+        "type": "function",
+        "z": "30f53997.8a2b66",
+        "name": "convert output to standard message format",
+        "func": "node.status({text: msg.payload});\n\nval = msg.payload;\nval = val.slice(5, -2);\nval = parseFloat(val);\nlet time = Math.floor(Date.now() / 1000);\nmsg = {};\n\nmsg.payload = \n{\n    'value': val,\n    'time': time,\n    'meterid': global.get('serno'),\n    'suit': \"cpu_temperature\",\n    'point_type': \"data_point\"\n};\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 890,
+        "y": 160,
+        "wires": [
+            [
+                "836fe4ef.c23688",
+                "2187bd0.8ecad44"
+            ]
+        ]
+    },
+    {
+        "id": "ecb3ce9b.eb03b",
+        "type": "link in",
+        "z": "30f53997.8a2b66",
+        "name": "Measure_Pi_temperature",
+        "links": [
+            "9890d5a6.289538"
+        ],
+        "x": 235,
+        "y": 160,
+        "wires": [
+            [
+                "b926c6e3.490bd8"
+            ]
+        ]
+    },
+    {
+        "id": "836fe4ef.c23688",
+        "type": "link out",
+        "z": "30f53997.8a2b66",
+        "name": "Special_reading_out",
+        "links": [
+            "c91f874d.be1658",
+            "31762113.90274e",
+            "189bec5c.0898d4"
+        ],
+        "x": 1375,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "c91f874d.be1658",
+        "type": "link in",
+        "z": "fa4618a0.5a1ec8",
+        "name": "MQTT_in",
+        "links": [
+            "836fe4ef.c23688",
+            "f7d1186a.403e58",
+            "e02232bd.de84d"
+        ],
+        "x": 295,
+        "y": 200,
+        "wires": [
+            [
+                "ccbf941b.d5fe58"
+            ]
+        ]
+    },
+    {
+        "id": "9890d5a6.289538",
+        "type": "link out",
+        "z": "3c7e4464.321d3c",
+        "name": "",
+        "links": [
+            "ecb3ce9b.eb03b"
+        ],
+        "x": 955,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "c98b2b30.3f1748",
+        "type": "comment",
+        "z": "3c7e4464.321d3c",
+        "name": "PROCESSOR TEMPERATURE",
+        "info": "",
+        "x": 1290,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "a5687be9.41f308",
+        "type": "http request",
+        "z": "30f53997.8a2b66",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "url": "",
+        "tls": "",
+        "x": 610,
+        "y": 320,
+        "wires": [
+            [
+                "ef02f507.d42408",
+                "8d8b2dd6.38b92"
+            ]
+        ]
+    },
+    {
+        "id": "ef02f507.d42408",
+        "type": "function",
+        "z": "30f53997.8a2b66",
+        "name": "parse output to standard message format",
+        "func": "if(msg.payload.status == 'success') {\n\n    val = msg.payload.data.value;\n    meter_id = msg.payload.data.address;\n    time = Math.floor(msg.payload.data.time);\n    //let time = Math.floor(Date.now() / 1000);\n    \n    \n    msg = {};\n    \n    msg.payload = \n    {\n        'value': val,\n        'time': time,\n        'meterid': meter_id,\n        'suit': \"1wire\",\n        'point_type': \"data_point\"\n    };\n    \n    node.status({text: 'Last read: ' + msg.payload.value.toString()});\n    return msg;\n} else return",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 900,
+        "y": 320,
+        "wires": [
+            [
+                "836fe4ef.c23688",
+                "d4f41c2e.06f22"
+            ]
+        ]
+    },
+    {
+        "id": "fe597368.6957a",
+        "type": "link in",
+        "z": "30f53997.8a2b66",
+        "name": "Onewire",
+        "links": [
+            "4bde0347.eb110c"
+        ],
+        "x": 235,
+        "y": 320,
+        "wires": [
+            [
+                "41705dd6.23bfa4"
+            ]
+        ]
+    },
+    {
+        "id": "609814e4.269c1c",
+        "type": "comment",
+        "z": "30f53997.8a2b66",
+        "name": "Processor temperature",
+        "info": "",
+        "x": 380,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "88dd142c.af9c98",
+        "type": "comment",
+        "z": "30f53997.8a2b66",
+        "name": "1-Wire thermometer",
+        "info": "",
+        "x": 370,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "4bde0347.eb110c",
+        "type": "link out",
+        "z": "3c7e4464.321d3c",
+        "name": "",
+        "links": [
+            "fe597368.6957a"
+        ],
+        "x": 955,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "28ab43d8.27bf0c",
+        "type": "comment",
+        "z": "3c7e4464.321d3c",
+        "name": "ONEWIRE TEMPERATURE",
+        "info": "",
+        "x": 1280,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "8369d3c0.b5dbf",
+        "type": "function",
+        "z": "3c7e4464.321d3c",
+        "name": "1Wire thermometer 286FCAB20900007E",
+        "func": "// 1-Wire thermometer\n\nmsg.payload = \n{ \n    'address': '286FCAB20900007E'\n} \n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 640,
+        "y": 760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "41705dd6.23bfa4",
+        "type": "function",
+        "z": "30f53997.8a2b66",
+        "name": "prepare request",
+        "func": "incoming = msg.payload;\nmsg = {};\n\nmsg.url = '127.0.0.1:8080/json/sensor/' + incoming.address;\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 400,
+        "y": 320,
+        "wires": [
+            [
+                "a5687be9.41f308",
+                "b39c204c.7cba6"
+            ]
+        ]
+    },
+    {
+        "id": "d4f41c2e.06f22",
+        "type": "debug",
+        "z": "30f53997.8a2b66",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 1190,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "b39c204c.7cba6",
+        "type": "debug",
+        "z": "30f53997.8a2b66",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 590,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "8d8b2dd6.38b92",
+        "type": "debug",
+        "z": "30f53997.8a2b66",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 790,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "2fc81224.8e390e",
+        "type": "comment",
+        "z": "3c7e4464.321d3c",
+        "name": "this should be connected to Modbus RTU flow",
+        "info": "",
+        "x": 930,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "36f4b92a.38bb26",
+        "type": "link out",
+        "z": "3c7e4464.321d3c",
+        "name": "",
+        "links": [
+            "7673c3c1.4cb68c",
+            "79b7e019.c97c3"
+        ],
+        "x": 955,
+        "y": 380,
+        "wires": [],
+        "inputLabels": [
+            "DI"
+        ]
+    },
+    {
+        "id": "d324c194.5da75",
+        "type": "comment",
+        "z": "3c7e4464.321d3c",
+        "name": "DIGITAL INPUTS",
+        "info": "",
+        "x": 1240,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "2187bd0.8ecad44",
+        "type": "debug",
+        "z": "30f53997.8a2b66",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 1190,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "770e3b4c.eec4d4",
+        "type": "function",
+        "z": "719ef0cd.4627",
+        "name": "",
+        "func": "context.digital_inputs = context.digital_inputs || [];\n\n// send only on 'send' command, otherwise chceck if anything changed\nif(msg.payload == 'send'){\n    send = true;\n} else {\n    send = false;\n    digital_inputs = msg.payload.data.slice(0,8);\n}\n\nmsg = {};\n\nif(context.digital_inputs == digital_inputs && !send){\n    return;\n} else if (!send) {\n    comparison = [];\n    for(i = 0; i < digital_inputs.length; i++) {\n\t    comparison[i] = digital_inputs[i] == context.digital_inputs[i];\n    }\n    for(i = 0; i < comparison.length; i++) {\n\t    if(!comparison[i]){\n\t        time = Math.floor(Date.now() / 1000);\n\t        msg.payload = \n                {\n                    'value': digital_inputs[i] ? 1:0,\n                    'time': time,\n                    'meterid': global.get('serno') + '_di_' + i.toString(), // was serno_di\n                    'suit': 0, // was i\n                    'point_type': \"data_point\"\n                }; \n            node.send(msg)\n\t    }\n    }\n    context.digital_inputs = digital_inputs;\n} \n\n\nif(send) {\n\ttime = Math.floor(Date.now() / 1000);\n    for(i = 0; i < digital_inputs.length; i++) {\n\t    msg.payload = \n                {\n                    'value': digital_inputs[i] ? 1:0,\n                    'time': time,\n                    'meterid': global.get('serno') + '_di_' + i.toString(), // was serno_di\n                    'suit': 0, // was i\n                    'point_type': \"data_point\"\n                }; \n            node.send(msg)\n\t}\n\tcontext.digital_inputs = digital_inputs;\n}\n\nnode.status({text: 'Status: ' + (context.digital_inputs[0] ? 1:0) + '|' + (context.digital_inputs[1] ? 1:0) + '|' + (context.digital_inputs[2] ? 1:0) + '|' + (context.digital_inputs[3] ? 1:0)});\nreturn;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 810,
+        "y": 260,
+        "wires": [
+            [
+                "e661295a.8e1408",
+                "f7d1186a.403e58"
+            ]
+        ]
+    },
+    {
+        "id": "79b7e019.c97c3",
+        "type": "link in",
+        "z": "719ef0cd.4627",
+        "name": "Digital_inputs",
+        "links": [
+            "36f4b92a.38bb26"
+        ],
+        "x": 295,
+        "y": 260,
+        "wires": [
+            [
+                "770e3b4c.eec4d4"
+            ]
+        ]
+    },
+    {
+        "id": "32ecd679.7727fa",
+        "type": "modbus-read",
+        "z": "719ef0cd.4627",
+        "name": "Read digital inputs",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "unitid": "admin",
+        "dataType": "Input",
+        "adr": "4",
+        "quantity": "8",
+        "rate": "500",
+        "rateUnit": "ms",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "cd4390dd.51895",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "x": 430,
+        "y": 320,
+        "wires": [
+            [],
+            [
+                "770e3b4c.eec4d4",
+                "897ec98.d4bd538"
+            ]
+        ]
+    },
+    {
+        "id": "e661295a.8e1408",
+        "type": "debug",
+        "z": "719ef0cd.4627",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 1050,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "24ac57e1.1ed918",
+        "type": "comment",
+        "z": "719ef0cd.4627",
+        "name": "TCP Modbus - digital values",
+        "info": "",
+        "x": 460,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "f7d1186a.403e58",
+        "type": "link out",
+        "z": "719ef0cd.4627",
+        "name": "Special_reading_out",
+        "links": [
+            "c91f874d.be1658",
+            "31762113.90274e",
+            "189bec5c.0898d4"
+        ],
+        "x": 1295,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "f3fbc241.19ccd",
+        "type": "comment",
+        "z": "719ef0cd.4627",
+        "name": "^ set period according to measured system",
+        "info": "",
+        "x": 500,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "8e524315.62e3e",
+        "type": "comment",
+        "z": "fa4618a0.5a1ec8",
+        "name": "convert message format as described under to MQTT message, encode with protobuf",
+        "info": "",
+        "x": 720,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "64692034.1cd6",
+        "type": "comment",
+        "z": "719ef0cd.4627",
+        "name": "Send only when receive msg.payload == 'send', or on each input change",
+        "info": "",
+        "x": 910,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "c769fe5a.de66f",
+        "type": "comment",
+        "z": "30f53997.8a2b66",
+        "name": "using internal system command",
+        "info": "",
+        "x": 650,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "49e0f1d6.771b2",
+        "type": "comment",
+        "z": "30f53997.8a2b66",
+        "name": "send to MQTT",
+        "info": "",
+        "x": 1490,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "f238f6f9.714348",
+        "type": "function",
+        "z": "3c7e4464.321d3c",
+        "name": "Produal CO2",
+        "func": "//{ \n//    value: msg.payload, \n//    'fc': 4,              MODBUS FUNCTION CODE\n//    'unitid': 1,          MODBUS DEVICE ID\n//    'address': 0 ,        START ADDRESS OF THE REGISTER\n//    'quantity': 50        NUMBER OF REGISTERS TO READ\n//    'meterid': '1000',    ENECTIVA IMPORT ID\n//    'suit': '0',          ENECTIVA SUIT\n//    'protocol':'modbus',  PROTOCOL (modbus/mbus)\n//} \n// E.G. Eastron SDM630 has actual power on address 30053 (or 0x34) - therefore the address is 52\n\nmsg.payload = \n{ \n    'fc': 4, \n    'unitid': 1, \n    'address': 4, \n    'quantity': 1,\n    'value': { \n        'datatype': 'int16', \n        'meterid': 1,\n        'point_type': 'data_point',\n    }\n} \n\n// msg.payload.value = { 'datatype': 'float', 'meterid': 73130497,};\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 550,
+        "y": 240,
+        "wires": [
+            [
+                "28858951.dd27b6"
+            ]
+        ]
+    },
+    {
+        "id": "3c87bb0f.833c24",
+        "type": "function",
+        "z": "3c7e4464.321d3c",
+        "name": "Produal Temperature",
+        "func": "//{ \n//    value: msg.payload, \n//    'fc': 4,              MODBUS FUNCTION CODE\n//    'unitid': 1,          MODBUS DEVICE ID\n//    'address': 0 ,        START ADDRESS OF THE REGISTER\n//    'quantity': 50        NUMBER OF REGISTERS TO READ\n//    'meterid': '1000',    ENECTIVA IMPORT ID\n//    'suit': '0',          ENECTIVA SUIT\n//    'protocol':'modbus',  PROTOCOL (modbus/mbus)\n//} \n// E.G. Eastron SDM630 has actual power on address 30053 (or 0x34) - therefore the address is 52\n\nmsg.payload = \n{ \n    'fc': 4, \n    'unitid': 1, \n    'address': 0, \n    'quantity': 1,\n    'value': { \n        'datatype': 'int16', \n        'meterid': 1,\n        'point_type': 'data_point',\n    }\n} \n\n// msg.payload.value = { 'datatype': 'float', 'meterid': 73130497,};\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 580,
+        "y": 280,
+        "wires": [
+            [
+                "28858951.dd27b6"
+            ]
+        ]
+    },
+    {
+        "id": "29d22bcf.b030a4",
+        "type": "function",
+        "z": "3c7e4464.321d3c",
+        "name": "Produal Humidity",
+        "func": "//{ \n//    value: msg.payload, \n//    'fc': 4,              MODBUS FUNCTION CODE\n//    'unitid': 1,          MODBUS DEVICE ID\n//    'address': 0 ,        START ADDRESS OF THE REGISTER\n//    'quantity': 50        NUMBER OF REGISTERS TO READ\n//    'meterid': '1000',    ENECTIVA IMPORT ID\n//    'suit': '0',          ENECTIVA SUIT\n//    'protocol':'modbus',  PROTOCOL (modbus/mbus)\n//} \n// E.G. Eastron SDM630 has actual power on address 30053 (or 0x34) - therefore the address is 52\n\nmsg.payload = \n{ \n    'fc': 4, \n    'unitid': 1, \n    'address': 5, \n    'quantity': 1,\n    'value': { \n        'datatype': 'int16', \n        'meterid': 1,\n        'point_type': 'data_point',\n    }\n} \n\n// msg.payload.value = { 'datatype': 'float', 'meterid': 73130497,};\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 570,
+        "y": 320,
+        "wires": [
+            [
+                "28858951.dd27b6"
+            ]
+        ]
+    },
+    {
+        "id": "cfdfe7b5.451bb8",
+        "type": "inject",
+        "z": "3c7e4464.321d3c",
+        "name": "seconds",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "15",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "x": 160,
+        "y": 80,
+        "wires": [
+            [
+                "f238f6f9.714348"
+            ]
+        ]
+    },
+    {
+        "id": "520592e8.f41efc",
+        "type": "comment",
+        "z": "3c7e4464.321d3c",
+        "name": "this should be connected to Modbus RTU flow",
+        "info": "",
+        "x": 930,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "fb57cf81.ed7f4",
+        "type": "modbus-flex-getter",
+        "z": "c911378b.84a6a8",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": true,
+        "logIOActivities": false,
+        "server": "cd4390dd.51895",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "x": 490,
+        "y": 280,
+        "wires": [
+            [],
+            [
+                "8a915edb.9a252",
+                "9bfa3fc5.907ac"
+            ]
+        ]
+    },
+    {
+        "id": "823bf657.51c358",
+        "type": "link in",
+        "z": "c911378b.84a6a8",
+        "name": "ModbusTCP_reading_in",
+        "links": [
+            "894bb0ab.91a17"
+        ],
+        "x": 255,
+        "y": 280,
+        "wires": [
+            [
+                "fb57cf81.ed7f4"
+            ]
+        ]
+    },
+    {
+        "id": "9bfa3fc5.907ac",
+        "type": "debug",
+        "z": "c911378b.84a6a8",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 770,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "650c92fa.35a2bc",
+        "type": "comment",
+        "z": "c911378b.84a6a8",
+        "name": "TCP Modbus - Mervis Unipi",
+        "info": "",
+        "x": 460,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "b9ca3a8e.c00768",
+        "type": "comment",
+        "z": "3c7e4464.321d3c",
+        "name": "MODBUS TCP",
+        "info": "",
+        "x": 1240,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "894bb0ab.91a17",
+        "type": "link out",
+        "z": "3c7e4464.321d3c",
+        "name": "",
+        "links": [
+            "823bf657.51c358"
+        ],
+        "x": 955,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "44457f0b.1714",
+        "type": "inject",
+        "z": "3c7e4464.321d3c",
+        "name": "CRON 10 minutes",
+        "topic": "",
+        "payload": "send",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "*/10 0-23 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 190,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "897ec98.d4bd538",
+        "type": "debug",
+        "z": "719ef0cd.4627",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 830,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "90c3b3b8.9148e",
+        "type": "comment",
+        "z": "b2d5f1b6.dabb4",
+        "name": "msg.payload =  { ",
+        "info": "msg.payload = \n{\n    'value': val,\n    'time': time,\n    'meterid': 99999999,\n    'suit': \"1wire\",\n    'point_type': \"data_point\"\n};",
+        "x": 520,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "7ca501ca.6580d",
+        "type": "comment",
+        "z": "b2d5f1b6.dabb4",
+        "name": " 'value': HODNOTA:FLOAT,",
+        "info": "msg.payload = \n{\n    'value': HODNOTA:FLOAT,\n    'time': time,\n    'meterid': 99999999,\n    'suit': \"1wire\",\n    'point_type': \"data_point\"\n};",
+        "x": 570,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "3c2a27a1.5d9dc8",
+        "type": "comment",
+        "z": "b2d5f1b6.dabb4",
+        "name": "'time': CAS,",
+        "info": "msg.payload = \n{\n    'value': val,\n    'time': Math.floor(Date.now() / 1000);,\n    'meterid': 99999999,\n    'suit': \"1wire\",\n    'point_type': \"data_point\"\n};",
+        "x": 530,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "bfc0a824.e49ea8",
+        "type": "comment",
+        "z": "b2d5f1b6.dabb4",
+        "name": "'meterid': METER_ID,",
+        "info": "msg.payload = \n{\n    'value': val,\n    'time': time,\n    'meterid': 99999999,\n    'suit': \"1wire\",\n    'point_type': \"data_point\"\n};",
+        "x": 560,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "8c8b5d06.e7b22",
+        "type": "comment",
+        "z": "b2d5f1b6.dabb4",
+        "name": " 'suit': \"SUIT\",",
+        "info": "msg.payload = \n{\n    'value': val,\n    'time': time,\n    'meterid': 99999999,\n    'suit': \"1wire\",\n    'point_type': \"data_point\"\n};",
+        "x": 530,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "87ff5f69.e1683",
+        "type": "comment",
+        "z": "b2d5f1b6.dabb4",
+        "name": "'point_type': \"data_point\" ",
+        "info": "msg.payload = \n{\n    'value': val,\n    'time': time,\n    'meterid': 99999999,\n    'suit': \"1wire\",\n    'point_type': \"data_point\"\n};",
+        "x": 570,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "1c1cfc2f.b5dab4",
+        "type": "comment",
+        "z": "b2d5f1b6.dabb4",
+        "name": "}",
+        "info": "msg.payload = \n{\n    'value': val,\n    'time': time,\n    'meterid': 99999999,\n    'suit': \"1wire\",\n    'point_type': \"data_point\"\n};",
+        "x": 490,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "231ad572.cf5caa",
+        "type": "comment",
+        "z": "b2d5f1b6.dabb4",
+        "name": "convert message format as described to Enectiva Librarian API request",
+        "info": "",
+        "x": 710,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "90e8d960.4cf638",
+        "type": "link in",
+        "z": "b2d5f1b6.dabb4",
+        "name": "HTTP_in",
+        "links": [
+            "d8816b44.397398",
+            "7f081809.c446b8"
+        ],
+        "x": 335,
+        "y": 200,
+        "wires": [
+            [
+                "9db0665c.e6b6e8",
+                "78fb58d2.f53db8"
+            ]
+        ]
+    },
+    {
+        "id": "9db0665c.e6b6e8",
+        "type": "function",
+        "z": "b2d5f1b6.dabb4",
+        "name": "Prepare HTTP request",
+        "func": "cust_uuid = global.get('cust_uuid');\nenvironment = global.get('environment');\nauth_token = global.get('auth_token');\nincoming_message = msg.payload;\nmsg = {};\n\n\nif (environment == 'production'){\n    address = \"enectiva.cz\";\n} else {\n    address = \"mericitechnologie.cz\";\n}\n\n\nif (incoming_message.point_type == 'reading'){\n    type = 'readings';\n} else {\n    type = \"data_points\";\n}\n\n\nISOtimeObj = new Date(1000*incoming_message.time);\nISOtime = ISOtimeObj.toISOString();\n\n\nmsg.url = \"https://api.\" + address + \"/\" + type + \"/\" + cust_uuid\n\nmsg.headers = {\n    'Content-Type': 'application/vnd.api+json',\n    'Authorization': 'Bearer: ' + auth_token,\n    'Accept': 'application/vnd.api+json'\n}\n\nmsg.payload = {\n    \"data\": {\n        \"time\": ISOtime,\n        \"state\": incoming_message.value,\n        \"value\": incoming_message.value,\n        \"meter_id\": incoming_message.meterid.toString() + \"_\" + incoming_message.suit.toString(),\n        \"series_id\": incoming_message.meterid.toString() + \"_\" + incoming_message.suit.toString(),\n        \"sender\": \"unipi\",\n        \"suit\": \"0\"\n    }\n}\n\nnode.status({text: \"Last message at \" + incoming_message.time.toString()});\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 680,
+        "y": 200,
+        "wires": [
+            [
+                "b3c48b7d.84a158",
+                "5d1b03fb.65a58c"
+            ]
+        ]
+    },
+    {
+        "id": "b3c48b7d.84a158",
+        "type": "http request",
+        "z": "b2d5f1b6.dabb4",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "url": "",
+        "tls": "",
+        "x": 950,
+        "y": 200,
+        "wires": [
+            [
+                "c94d27ce.aa6ec8",
+                "42a1d484.ff0bec"
+            ]
+        ]
+    },
+    {
+        "id": "c94d27ce.aa6ec8",
+        "type": "debug",
+        "z": "b2d5f1b6.dabb4",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1150,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "d8816b44.397398",
+        "type": "link out",
+        "z": "719ef0cd.4627",
+        "name": "",
+        "links": [
+            "90e8d960.4cf638"
+        ],
+        "x": 1295,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "78fb58d2.f53db8",
+        "type": "debug",
+        "z": "b2d5f1b6.dabb4",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 590,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "5d1b03fb.65a58c",
+        "type": "debug",
+        "z": "b2d5f1b6.dabb4",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 910,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "67aee685.35afa8",
+        "type": "comment",
+        "z": "719ef0cd.4627",
+        "name": "HTTP",
+        "info": "",
+        "x": 1370,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "672fe4bb.cd091c",
+        "type": "comment",
+        "z": "719ef0cd.4627",
+        "name": "MQTT",
+        "info": "",
+        "x": 1370,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "42a1d484.ff0bec",
+        "type": "switch",
+        "z": "b2d5f1b6.dabb4",
+        "name": "",
+        "property": "statusCode",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "201",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1150,
+        "y": 200,
+        "wires": [
+            [
+                "6252d225.e35b1c"
+            ],
+            [
+                "3251e830.8d4398"
+            ]
+        ]
+    },
+    {
+        "id": "3251e830.8d4398",
+        "type": "debug",
+        "z": "b2d5f1b6.dabb4",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1350,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "6252d225.e35b1c",
+        "type": "debug",
+        "z": "b2d5f1b6.dabb4",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1350,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "19fb5094.d689af",
+        "type": "inject",
+        "z": "3c7e4464.321d3c",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "*/10 0-23 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 170,
+        "y": 540,
+        "wires": [
+            [
+                "77272224.318c8c"
+            ]
+        ]
+    },
+    {
+        "id": "7f081809.c446b8",
+        "type": "link out",
+        "z": "3c7e4464.321d3c",
+        "name": "",
+        "links": [
+            "90e8d960.4cf638"
+        ],
+        "x": 955,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "77272224.318c8c",
+        "type": "function",
+        "z": "3c7e4464.321d3c",
+        "name": "Send timestamp",
+        "func": "node.status({text: msg.payload});\n\nval = msg.payload;\nlet time = Math.floor(Date.now() / 1000);\nmsg = {};\n\nmsg.payload = \n{\n    'value': val,\n    'time': time,\n    'meterid': 'timestamp',\n    'suit': \"0\",\n    'point_type': \"reading\"\n};\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 560,
+        "y": 540,
+        "wires": [
+            [
+                "7f081809.c446b8"
+            ]
+        ]
+    },
+    {
+        "id": "74f66cfa.3daf44",
+        "type": "comment",
+        "z": "3c7e4464.321d3c",
+        "name": "Pass payload as is",
+        "info": "",
+        "x": 1250,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "a63facd6.db15",
+        "type": "comment",
+        "z": "fa4618a0.5a1ec8",
+        "name": "Documentation of message object format",
+        "info": "```\nmsg.payload = \n{   \n    'value': val,   \n    'time': time,   \n    'meterid': 99999999,   \n    'suit': \"1wire\",   \n    'point_type': \"data_point\"   \n};\n```",
+        "x": 220,
+        "y": 400,
+        "wires": []
+    }
+]
