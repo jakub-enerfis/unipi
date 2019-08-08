@@ -1,12 +1,16 @@
 {
+<<<<<<< HEAD
     "name": "Unipi_for_Enectiva_from_scratch",
+=======
+    "name": "Unipi_for_Enectiva",
+>>>>>>> 60bf8716886c6926b39e5df26784ea4e665c8078
     "description": "A Node-RED Project",
     "version": "0.0.1",
     "dependencies": {},
     "node-red": {
         "settings": {
-            "flowFile": "flow.json",
-            "credentialsFile": "flow_cred.json"
+            "flowFile": "flows.json",
+            "credentialsFile": "flows_cred.json"
         }
     }
 }
