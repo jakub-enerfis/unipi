@@ -2370,7 +2370,7 @@
         "type": "function",
         "z": "a8829034.677b7",
         "name": "",
-        "func": "circuit_name = msg.payload.circuit;\ncounter = msg.payload.counter;\n\ncircuit_data = flow.get(circuit_name) || {'name': circuit_name, 'offset': 0, 'maxval': 0}\n\n// offset = flow.get(\"offset\") || flow.get(\"initial_offset\") || 0;\n// maxval = flow.get(\"maxval\") || 0;\n\n\nif(counter + circuit_data.offset < circuit_data.maxval){\n    circuit_data.offset = circuit_data.maxval\n}\ncircuit_data.maxval = counter + circuit_data.offset;\n\n// flow.set(\"offset\", offset);\n// flow.set(\"maxval\", maxval)\n\nflow.set(circuit_name, circuit_data);\n\n\nmsg = {};\nmsg.maxval = circuit_data.maxval;\nmsg.offset = circuit_data.offset;\nmsg.circuit = circuit_name;\nmsg.counter = circuit_data.counter;\n\nmsg.circuit_data = circuit_data;\n\nreturn msg;",
+        "func": "circuit_name = msg.payload.circuit;\ncounter = msg.payload.counter;\n\ncircuit_data = flow.get(circuit_name) || {'name': circuit_name, 'offset': 0, 'maxval': 0}\n\n// offset = flow.get(\"offset\") || flow.get(\"initial_offset\") || 0;\n// maxval = flow.get(\"maxval\") || 0;\n\n\nif(counter + circuit_data.offset < circuit_data.maxval){\n    node.warn(\"Counter has reset\");\n    circuit_data.offset = circuit_data.maxval\n}\ncircuit_data.maxval = counter + circuit_data.offset;\n\n// flow.set(\"offset\", offset);\n// flow.set(\"maxval\", maxval)\n\nflow.set(circuit_name, circuit_data);\n\n\nmsg = {};\nmsg.maxval = circuit_data.maxval;\nmsg.offset = circuit_data.offset;\nmsg.circuit = circuit_name;\nmsg.counter = circuit_data.counter;\n\nmsg.circuit_data = circuit_data;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "x": 670,
