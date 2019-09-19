@@ -75,15 +75,15 @@
         "compatmode": true,
         "keepalive": "60",
         "cleansession": false,
-        "birthTopic": "devices/unipi/0014/status",
+        "birthTopic": "devices/unipi/A0012/status",
         "birthQos": "1",
         "birthRetain": "true",
         "birthPayload": "connected",
-        "closeTopic": "devices/unipi/0014/status",
+        "closeTopic": "devices/unipi/A0012/status",
         "closeQos": "0",
         "closeRetain": "true",
         "closePayload": "disconnected (exp)",
-        "willTopic": "devices/unipi/0014/status",
+        "willTopic": "devices/unipi/A0012/status",
         "willQos": "1",
         "willRetain": "true",
         "willPayload": "disconnected (unexp)"
@@ -2530,8 +2530,8 @@
         "id": "ac2b5eb.af04ea",
         "type": "function",
         "z": "3c7e4464.321d3c",
-        "name": "DI 1_01",
-        "func": "msg.payload = \n{ \n    'circuit_name': '1_01',\n    'meter_id': null,\n    'suit': '0',\n    'point_type': 'reading'\n} \n\n// msg.payload.value = { 'datatype': 'float', 'meterid': 73130497,};\n\nreturn msg",
+        "name": "DI 1_03",
+        "func": "msg.payload = \n{ \n    'circuit_name': '1_03',\n    'meter_id': null,\n    'suit': '0',\n    'point_type': 'data_point'\n} \n\n// msg.payload.value = { 'datatype': 'float', 'meterid': 73130497,};\n\nreturn msg",
         "outputs": 1,
         "noerr": 0,
         "x": 540,
@@ -2606,14 +2606,15 @@
         "z": "bcfc1592.fd71f8",
         "name": "",
         "topic": "devices/unipi/A0012/ping",
-        "qos": "1",
+        "qos": "2",
         "datatype": "auto",
         "broker": "a87881c4.212c5",
         "x": 210,
         "y": 820,
         "wires": [
             [
-                "3e3260f2.ee6cf"
+                "3e3260f2.ee6cf",
+                "5a2d360d.5e3828"
             ]
         ]
     },
@@ -2626,7 +2627,7 @@
         "qos": "1",
         "retain": "false",
         "broker": "a87881c4.212c5",
-        "x": 670,
+        "x": 650,
         "y": 820,
         "wires": []
     },
@@ -2635,7 +2636,7 @@
         "type": "function",
         "z": "bcfc1592.fd71f8",
         "name": "",
-        "func": "msg.payload = 'pong';\nreturn msg;",
+        "func": "if (msg.payload == 'ping') {\n    msg.payload = 'pong';\n    return msg;\n}\nelse {\n    return\n}",
         "outputs": 1,
         "noerr": 0,
         "x": 430,
@@ -2643,6 +2644,41 @@
         "wires": [
             [
                 "db03da5b.f887f8"
+            ]
+        ]
+    },
+    {
+        "id": "5a2d360d.5e3828",
+        "type": "debug",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 430,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "a76201cb.2e911",
+        "type": "inject",
+        "z": "3c7e4464.321d3c",
+        "name": "seconds",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "15",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "x": 200,
+        "y": 420,
+        "wires": [
+            [
+                "ac2b5eb.af04ea"
             ]
         ]
     }
