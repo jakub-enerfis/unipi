@@ -455,7 +455,7 @@
         "type": "debug",
         "z": "bcfc1592.fd71f8",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -515,7 +515,7 @@
         "type": "debug",
         "z": "bcfc1592.fd71f8",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -711,7 +711,7 @@
         "type": "debug",
         "z": "fa4618a0.5a1ec8",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -969,14 +969,14 @@
         "z": "3c7e4464.321d3c",
         "name": "CRON 15 minutes",
         "topic": "",
-        "payload": "send",
+        "payload": "15m",
         "payloadType": "str",
         "repeat": "",
         "crontab": "*/15 0-23 * * *",
         "once": false,
         "onceDelay": 0.1,
-        "x": 190,
-        "y": 160,
+        "x": 170,
+        "y": 200,
         "wires": [
             []
         ]
@@ -1527,16 +1527,16 @@
         "id": "cfdfe7b5.451bb8",
         "type": "inject",
         "z": "3c7e4464.321d3c",
-        "name": "seconds",
+        "name": "15 seconds",
         "topic": "",
-        "payload": "",
+        "payload": "15s",
         "payloadType": "str",
         "repeat": "15",
         "crontab": "",
         "once": true,
         "onceDelay": "1",
-        "x": 160,
-        "y": 80,
+        "x": 150,
+        "y": 120,
         "wires": [
             []
         ]
@@ -1619,14 +1619,14 @@
         "z": "3c7e4464.321d3c",
         "name": "CRON 10 minutes",
         "topic": "",
-        "payload": "send",
+        "payload": "10m",
         "payloadType": "str",
         "repeat": "",
         "crontab": "*/10 0-23 * * *",
         "once": false,
         "onceDelay": 0.1,
-        "x": 190,
-        "y": 120,
+        "x": 170,
+        "y": 160,
         "wires": [
             []
         ]
@@ -2322,8 +2322,8 @@
         "console": false,
         "tostatus": false,
         "complete": "true",
-        "x": 650,
-        "y": 120,
+        "x": 690,
+        "y": 220,
         "wires": []
     },
     {
@@ -2335,10 +2335,10 @@
         "devices": "input",
         "circuits": "1.01",
         "property": "",
-        "seedev": "0",
-        "seecirc": "0",
-        "x": 450,
-        "y": 120,
+        "seedev": "1",
+        "seecirc": "1",
+        "x": 470,
+        "y": 180,
         "wires": [
             [
                 "f9b9c648.6ff878",
@@ -2354,14 +2354,30 @@
         "name": "",
         "server": "",
         "client": "bc178ffa.97def",
-        "x": 180,
-        "y": 120,
+        "x": 200,
+        "y": 180,
         "wires": [
             [
                 "cd97b8ab.9c0148",
                 "582d5af0.16a674",
                 "527dad46.549fd4",
-                "c471859c.7e7c88"
+                "c471859c.7e7c88",
+                "c9da360a.3e5258",
+                "42814f14.70355",
+                "3537717d.a3643e",
+                "dc581357.ffd5c",
+                "61b06512.5d370c",
+                "50c16bdb.01c574",
+                "30a91204.7f5fae",
+                "77594cf.3444bb4",
+                "b6b802e.c7df6",
+                "e6f3d239.07a53",
+                "56810f76.dbd61",
+                "38e45b11.f4d884",
+                "f28f4b39.e1c178",
+                "ddbbe22f.c3723",
+                "8ef6d343.f5e52",
+                "4a390233.9dfcac"
             ]
         ]
     },
@@ -2373,8 +2389,8 @@
         "func": "circuit_name = msg.payload.circuit;\ncounter = msg.payload.counter;\n\ncircuit_data = flow.get(circuit_name) || {'name': circuit_name, 'offset': 0, 'maxval': 0}\n\n// offset = flow.get(\"offset\") || flow.get(\"initial_offset\") || 0;\n// maxval = flow.get(\"maxval\") || 0;\n\n\nif(counter + circuit_data.offset < circuit_data.maxval){\n    node.warn(\"Counter has reset\");\n    circuit_data.offset = circuit_data.maxval\n}\ncircuit_data.maxval = counter + circuit_data.offset;\n\n// flow.set(\"offset\", offset);\n// flow.set(\"maxval\", maxval)\n\nflow.set(circuit_name, circuit_data);\n\n\nmsg = {};\nmsg.maxval = circuit_data.maxval;\nmsg.offset = circuit_data.offset;\nmsg.circuit = circuit_name;\nmsg.counter = circuit_data.counter;\n\nmsg.circuit_data = circuit_data;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 670,
-        "y": 240,
+        "x": 690,
+        "y": 940,
         "wires": [
             [
                 "8ce75a5b.f33c98"
@@ -2392,8 +2408,8 @@
         "tostatus": false,
         "complete": "payload.counter",
         "targetType": "msg",
-        "x": 700,
-        "y": 60,
+        "x": 740,
+        "y": 180,
         "wires": []
     },
     {
@@ -2406,8 +2422,8 @@
         "console": false,
         "tostatus": false,
         "complete": "true",
-        "x": 930,
-        "y": 240,
+        "x": 850,
+        "y": 940,
         "wires": []
     },
     {
@@ -2421,8 +2437,8 @@
         "property": "",
         "seedev": "0",
         "seecirc": "0",
-        "x": 450,
-        "y": 160,
+        "x": 470,
+        "y": 220,
         "wires": [
             [
                 "b25696f3.48a888"
@@ -2440,8 +2456,8 @@
         "property": "",
         "seedev": "0",
         "seecirc": "0",
-        "x": 450,
-        "y": 200,
+        "x": 470,
+        "y": 260,
         "wires": [
             [
                 "b25696f3.48a888"
@@ -2457,10 +2473,10 @@
         "devices": "input",
         "circuits": "1.04",
         "property": "",
-        "seedev": "0",
-        "seecirc": "0",
-        "x": 450,
-        "y": 240,
+        "seedev": "1",
+        "seecirc": "1",
+        "x": 470,
+        "y": 300,
         "wires": [
             [
                 "b25696f3.48a888"
@@ -2475,8 +2491,8 @@
         "func": "let circuit_name = msg.payload.circuit_name;\n\nlet meter_id = msg.payload.meter_id || circuit_name;\nlet suit = msg.payload.suit || 'default';\n\ncircuit_data = flow.get(circuit_name) || {'name': circuit_name, 'offset': 0, 'maxval': 0}\n\nlet time = Math.floor(Date.now() / 1000);\nlet point_type = msg.payload.point_type || 'reading';\n\nmsg = {};\n\nmsg.payload = \n{\n    'value': circuit_data.maxval,\n    'time': time,\n    'meterid': meter_id,\n    'suit': suit,\n    'point_type': point_type\n};\n\nreturn msg;\n\n",
         "outputs": 1,
         "noerr": 0,
-        "x": 440,
-        "y": 500,
+        "x": 460,
+        "y": 60,
         "wires": [
             [
                 "826acd14.0a20c",
@@ -2492,8 +2508,8 @@
         "links": [
             "c91f874d.be1658"
         ],
-        "x": 1075,
-        "y": 500,
+        "x": 1095,
+        "y": 60,
         "wires": []
     },
     {
@@ -2504,8 +2520,8 @@
         "links": [
             "be8bab2d.266948"
         ],
-        "x": 75,
-        "y": 500,
+        "x": 95,
+        "y": 60,
         "wires": [
             [
                 "947e2d2c.1b8d5"
@@ -2517,13 +2533,13 @@
         "type": "debug",
         "z": "a8829034.677b7",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "true",
-        "x": 630,
-        "y": 540,
+        "x": 690,
+        "y": 100,
         "wires": []
     },
     {
@@ -2652,7 +2668,7 @@
         "type": "debug",
         "z": "bcfc1592.fd71f8",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2679,6 +2695,310 @@
         "wires": [
             [
                 "ac2b5eb.af04ea"
+            ]
+        ]
+    },
+    {
+        "id": "c9da360a.3e5258",
+        "type": "unipi-input",
+        "z": "a8829034.677b7",
+        "name": "",
+        "alias": "",
+        "devices": "input",
+        "circuits": "2.01",
+        "property": "",
+        "seedev": "1",
+        "seecirc": "1",
+        "x": 470,
+        "y": 340,
+        "wires": [
+            [
+                "b25696f3.48a888"
+            ]
+        ]
+    },
+    {
+        "id": "42814f14.70355",
+        "type": "unipi-input",
+        "z": "a8829034.677b7",
+        "name": "",
+        "alias": "",
+        "devices": "input",
+        "circuits": "2.02",
+        "property": "",
+        "seedev": "0",
+        "seecirc": "0",
+        "x": 470,
+        "y": 380,
+        "wires": [
+            [
+                "b25696f3.48a888"
+            ]
+        ]
+    },
+    {
+        "id": "3537717d.a3643e",
+        "type": "unipi-input",
+        "z": "a8829034.677b7",
+        "name": "",
+        "alias": "",
+        "devices": "input",
+        "circuits": "2.03",
+        "property": "",
+        "seedev": "0",
+        "seecirc": "0",
+        "x": 470,
+        "y": 420,
+        "wires": [
+            [
+                "b25696f3.48a888"
+            ]
+        ]
+    },
+    {
+        "id": "dc581357.ffd5c",
+        "type": "unipi-input",
+        "z": "a8829034.677b7",
+        "name": "",
+        "alias": "",
+        "devices": "input",
+        "circuits": "2.04",
+        "property": "",
+        "seedev": "1",
+        "seecirc": "1",
+        "x": 470,
+        "y": 460,
+        "wires": [
+            [
+                "b25696f3.48a888"
+            ]
+        ]
+    },
+    {
+        "id": "61b06512.5d370c",
+        "type": "unipi-input",
+        "z": "a8829034.677b7",
+        "name": "",
+        "alias": "",
+        "devices": "input",
+        "circuits": "2.05",
+        "property": "",
+        "seedev": "1",
+        "seecirc": "1",
+        "x": 470,
+        "y": 500,
+        "wires": [
+            [
+                "b25696f3.48a888"
+            ]
+        ]
+    },
+    {
+        "id": "50c16bdb.01c574",
+        "type": "unipi-input",
+        "z": "a8829034.677b7",
+        "name": "",
+        "alias": "",
+        "devices": "input",
+        "circuits": "2.06",
+        "property": "",
+        "seedev": "0",
+        "seecirc": "0",
+        "x": 470,
+        "y": 540,
+        "wires": [
+            [
+                "b25696f3.48a888"
+            ]
+        ]
+    },
+    {
+        "id": "30a91204.7f5fae",
+        "type": "unipi-input",
+        "z": "a8829034.677b7",
+        "name": "",
+        "alias": "",
+        "devices": "input",
+        "circuits": "2.07",
+        "property": "",
+        "seedev": "0",
+        "seecirc": "0",
+        "x": 470,
+        "y": 580,
+        "wires": [
+            [
+                "b25696f3.48a888"
+            ]
+        ]
+    },
+    {
+        "id": "77594cf.3444bb4",
+        "type": "unipi-input",
+        "z": "a8829034.677b7",
+        "name": "",
+        "alias": "",
+        "devices": "input",
+        "circuits": "2.08",
+        "property": "",
+        "seedev": "1",
+        "seecirc": "1",
+        "x": 470,
+        "y": 620,
+        "wires": [
+            [
+                "b25696f3.48a888"
+            ]
+        ]
+    },
+    {
+        "id": "b6b802e.c7df6",
+        "type": "unipi-input",
+        "z": "a8829034.677b7",
+        "name": "",
+        "alias": "",
+        "devices": "input",
+        "circuits": "2.09",
+        "property": "",
+        "seedev": "1",
+        "seecirc": "1",
+        "x": 470,
+        "y": 660,
+        "wires": [
+            [
+                "b25696f3.48a888"
+            ]
+        ]
+    },
+    {
+        "id": "e6f3d239.07a53",
+        "type": "unipi-input",
+        "z": "a8829034.677b7",
+        "name": "",
+        "alias": "",
+        "devices": "input",
+        "circuits": "2.10",
+        "property": "",
+        "seedev": "0",
+        "seecirc": "0",
+        "x": 470,
+        "y": 700,
+        "wires": [
+            [
+                "b25696f3.48a888"
+            ]
+        ]
+    },
+    {
+        "id": "56810f76.dbd61",
+        "type": "unipi-input",
+        "z": "a8829034.677b7",
+        "name": "",
+        "alias": "",
+        "devices": "input",
+        "circuits": "2.11",
+        "property": "",
+        "seedev": "0",
+        "seecirc": "0",
+        "x": 470,
+        "y": 740,
+        "wires": [
+            [
+                "b25696f3.48a888"
+            ]
+        ]
+    },
+    {
+        "id": "38e45b11.f4d884",
+        "type": "unipi-input",
+        "z": "a8829034.677b7",
+        "name": "",
+        "alias": "",
+        "devices": "input",
+        "circuits": "2.12",
+        "property": "",
+        "seedev": "1",
+        "seecirc": "1",
+        "x": 470,
+        "y": 780,
+        "wires": [
+            [
+                "b25696f3.48a888"
+            ]
+        ]
+    },
+    {
+        "id": "f28f4b39.e1c178",
+        "type": "unipi-input",
+        "z": "a8829034.677b7",
+        "name": "",
+        "alias": "",
+        "devices": "input",
+        "circuits": "2.13",
+        "property": "",
+        "seedev": "1",
+        "seecirc": "1",
+        "x": 470,
+        "y": 820,
+        "wires": [
+            [
+                "b25696f3.48a888"
+            ]
+        ]
+    },
+    {
+        "id": "ddbbe22f.c3723",
+        "type": "unipi-input",
+        "z": "a8829034.677b7",
+        "name": "",
+        "alias": "",
+        "devices": "input",
+        "circuits": "2.14",
+        "property": "",
+        "seedev": "0",
+        "seecirc": "0",
+        "x": 470,
+        "y": 860,
+        "wires": [
+            [
+                "b25696f3.48a888"
+            ]
+        ]
+    },
+    {
+        "id": "8ef6d343.f5e52",
+        "type": "unipi-input",
+        "z": "a8829034.677b7",
+        "name": "",
+        "alias": "",
+        "devices": "input",
+        "circuits": "2.15",
+        "property": "",
+        "seedev": "0",
+        "seecirc": "0",
+        "x": 470,
+        "y": 900,
+        "wires": [
+            [
+                "b25696f3.48a888"
+            ]
+        ]
+    },
+    {
+        "id": "4a390233.9dfcac",
+        "type": "unipi-input",
+        "z": "a8829034.677b7",
+        "name": "",
+        "alias": "",
+        "devices": "input",
+        "circuits": "2.16",
+        "property": "",
+        "seedev": "1",
+        "seecirc": "1",
+        "x": 470,
+        "y": 940,
+        "wires": [
+            [
+                "b25696f3.48a888"
             ]
         ]
     }
