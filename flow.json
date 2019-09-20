@@ -1525,7 +1525,7 @@
         "y": 60,
         "wires": [
             [
-                "223eb691.e6c69a"
+                "dbc99d3e.af06"
             ]
         ]
     },
@@ -1729,7 +1729,7 @@
         "type": "debug",
         "z": "fa4618a0.5a1ec8",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2028,19 +2028,17 @@
         "z": "3c7e4464.321d3c",
         "name": "CRON 15 minutes",
         "topic": "",
-        "payload": "send",
+        "payload": "15m",
         "payloadType": "str",
         "repeat": "",
         "crontab": "*/15 0-23 * * *",
         "once": false,
         "onceDelay": 0.1,
-        "x": 190,
-        "y": 160,
+        "x": 170,
+        "y": 420,
         "wires": [
             [
-                "f238f6f9.714348",
-                "29d22bcf.b030a4",
-                "3c87bb0f.833c24"
+                "1b7eb60d.a2299a"
             ]
         ]
     },
@@ -2080,6 +2078,7 @@
         "z": "c911378b.84a6a8",
         "name": "Modbus_reading_out",
         "links": [
+            "90e8d960.4cf638",
             "c91f874d.be1658"
         ],
         "x": 975,
@@ -2630,7 +2629,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "str",
-        "repeat": "15",
+        "repeat": "10",
         "crontab": "",
         "once": true,
         "onceDelay": "1",
@@ -2638,7 +2637,9 @@
         "y": 80,
         "wires": [
             [
-                "f238f6f9.714348"
+                "f238f6f9.714348",
+                "3c87bb0f.833c24",
+                "29d22bcf.b030a4"
             ]
         ]
     },
@@ -2742,16 +2743,18 @@
         "z": "3c7e4464.321d3c",
         "name": "CRON 10 minutes",
         "topic": "",
-        "payload": "send",
+        "payload": "10m",
         "payloadType": "str",
         "repeat": "",
         "crontab": "*/10 0-23 * * *",
         "once": false,
         "onceDelay": 0.1,
-        "x": 190,
-        "y": 120,
+        "x": 170,
+        "y": 380,
         "wires": [
-            []
+            [
+                "1b7eb60d.a2299a"
+            ]
         ]
     },
     {
@@ -2855,7 +2858,8 @@
         "name": "HTTP_in",
         "links": [
             "d8816b44.397398",
-            "7f081809.c446b8"
+            "7f081809.c446b8",
+            "e02232bd.de84d"
         ],
         "x": 335,
         "y": 200,
@@ -3100,6 +3104,134 @@
         "info": "```\nmsg.payload = \n{   \n    'value': val,   \n    'time': time,   \n    'meterid': 99999999,   \n    'suit': \"1wire\",   \n    'point_type': \"data_point\"   \n};\n```",
         "x": 220,
         "y": 400,
+        "wires": []
+    },
+    {
+        "id": "dbc99d3e.af06",
+        "type": "file in",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "filename": "/home/pi/meters.json",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "x": 540,
+        "y": 120,
+        "wires": [
+            [
+                "a9c65ead.988d",
+                "2a799c4f.89ac34"
+            ]
+        ]
+    },
+    {
+        "id": "a9c65ead.988d",
+        "type": "json",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": true,
+        "x": 710,
+        "y": 120,
+        "wires": [
+            [
+                "ab3b5ebf.70c69"
+            ]
+        ]
+    },
+    {
+        "id": "ab3b5ebf.70c69",
+        "type": "function",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "func": "data = msg.payload\nif (!data) {\n    node.error('Config file data error')\n    return\n}\n\nif (data.enectiva_config.cust_uuid) {\n    global.set('cust_uuid', data.enectiva_config.cust_uuid);\n    node.warn('Customer UUID set')\n} else {\n    node.error('Customer UUID setting error')\n}\n\nif (data.enectiva_config.environment) {\n    global.set('environment', data.enectiva_config.environment); // can be 'staging' or 'production';\n    node.warn('Environment set to ' + msg.payload.enectiva_config.environment)\n} else {\n    node.error('Environment setting error')\n}\n\nif (data.enectiva_config.environment) {\n    global.set('meters', data.to_read)\n    node.status({text: data.to_read.length + \" meters set for readout\"});\n    node.warn(data.to_read.length + \" meters set for readout\")\n} else {\n    node.error(\"Error setting meters for readout\")\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 830,
+        "y": 120,
+        "wires": [
+            [
+                "2a799c4f.89ac34"
+            ]
+        ]
+    },
+    {
+        "id": "2a799c4f.89ac34",
+        "type": "debug",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1010,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "9b4bcc1f.51891",
+        "type": "function",
+        "z": "bcfc1592.fd71f8",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1120,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1b7eb60d.a2299a",
+        "type": "function",
+        "z": "3c7e4464.321d3c",
+        "name": "Filter by period",
+        "func": "meters = global.get('meters')\ntriggered_period = msg.payload\n\nfor (var meter of meters) {\n    if (meter.period == triggered_period) {\n        node.send(meter)\n    }\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 560,
+        "y": 380,
+        "wires": [
+            [
+                "6abdcb66.e3c4e4"
+            ]
+        ]
+    },
+    {
+        "id": "b67e646d.e7c558",
+        "type": "inject",
+        "z": "3c7e4464.321d3c",
+        "name": "CRON 5 minutes",
+        "topic": "",
+        "payload": "5m",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "*/5 0-23 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 170,
+        "y": 340,
+        "wires": [
+            [
+                "1b7eb60d.a2299a"
+            ]
+        ]
+    },
+    {
+        "id": "6abdcb66.e3c4e4",
+        "type": "debug",
+        "z": "3c7e4464.321d3c",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 780,
+        "y": 380,
         "wires": []
     }
 ]
