@@ -31,14 +31,21 @@
         "id": "30f53997.8a2b66",
         "type": "tab",
         "label": "1.2_Special reads",
-        "disabled": false,
+        "disabled": true,
         "info": ""
     },
     {
         "id": "719ef0cd.4627",
         "type": "tab",
-        "label": "1.2_Digital Inputs",
+        "label": "1.2_Digital Inputs - deprecated",
         "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "481c78ef.5a7c48",
+        "type": "tab",
+        "label": "1.3_Digital Inputs",
+        "disabled": false,
         "info": ""
     },
     {
@@ -52,14 +59,7 @@
         "id": "b2d5f1b6.dabb4",
         "type": "tab",
         "label": "1.2_HTTP request to enectiva",
-        "disabled": false,
-        "info": ""
-    },
-    {
-        "id": "481c78ef.5a7c48",
-        "type": "tab",
-        "label": "1.2.1_DI counter",
-        "disabled": false,
+        "disabled": true,
         "info": ""
     },
     {
@@ -1185,26 +1185,11 @@
         "once": true,
         "onceDelay": "0",
         "x": 200,
-        "y": 60,
+        "y": 120,
         "wires": [
             [
-                "dbc99d3e.af06",
-                "debb7dfc.40ee9"
+                "dbc99d3e.af06"
             ]
-        ]
-    },
-    {
-        "id": "223eb691.e6c69a",
-        "type": "function",
-        "z": "bcfc1592.fd71f8",
-        "name": "",
-        "func": "global.set('cust_uuid','3f399496-5cf8-4716-b771-9b9c96bee5a1');\nglobal.set('environment','staging'); // can be 'staging' or 'production';\nglobal.set('auth_token','eyJhbGciOiJFUzI1NiJ9.eyJqaXQiOiJhYjlhNTY1YjFhNzUyYjAxIiwic2NwIjoibGEiLCJ2ZXIiOjEsInN1YiI6IjNmMzk5NDk2LTVjZjgtNDcxNi1iNzcxLTliOWM5NmJlZTVhMSJ9._KCy1XQKHVAS3lKA5MsR44TYq6sg3G6TbC1KFw47lRuisFp9TNpakfp-x67jHESNXx255xZF_-MCNFTH5sBF-w');\n\nnode.status({text: \"configured\"});",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 490,
-        "y": 60,
-        "wires": [
-            []
         ]
     },
     {
@@ -1539,11 +1524,12 @@
         "links": [
             "28858951.dd27b6"
         ],
-        "x": 255,
+        "x": 95,
         "y": 100,
         "wires": [
             [
-                "ddf13262.82d41"
+                "559606e.e96c1f8",
+                "d673c970.b0f068"
             ]
         ]
     },
@@ -1794,7 +1780,6 @@
         "z": "3c7e4464.321d3c",
         "name": "",
         "links": [
-            "182a138e.bd5b9c",
             "8aebbe81.c3abe"
         ],
         "x": 955,
@@ -1808,9 +1793,9 @@
         "id": "d324c194.5da75",
         "type": "comment",
         "z": "3c7e4464.321d3c",
-        "name": "DIGITAL INPUTS",
+        "name": "DIGITAL INPUT COUNTER",
         "info": "",
-        "x": 1240,
+        "x": 1280,
         "y": 300,
         "wires": []
     },
@@ -2028,11 +2013,11 @@
         "links": [
             "894bb0ab.91a17"
         ],
-        "x": 255,
+        "x": 95,
         "y": 280,
         "wires": [
             [
-                "fb57cf81.ed7f4"
+                "2e7abeff.bd5cf2"
             ]
         ]
     },
@@ -2067,7 +2052,7 @@
         "name": "MODBUS TCP",
         "info": "",
         "x": 1240,
-        "y": 340,
+        "y": 380,
         "wires": []
     },
     {
@@ -2079,7 +2064,7 @@
             "823bf657.51c358"
         ],
         "x": 955,
-        "y": 340,
+        "y": 380,
         "wires": []
     },
     {
@@ -2263,18 +2248,6 @@
         "wires": []
     },
     {
-        "id": "d8816b44.397398",
-        "type": "link out",
-        "z": "719ef0cd.4627",
-        "name": "",
-        "links": [
-            "90e8d960.4cf638"
-        ],
-        "x": 1295,
-        "y": 220,
-        "wires": []
-    },
-    {
         "id": "78fb58d2.f53db8",
         "type": "debug",
         "z": "b2d5f1b6.dabb4",
@@ -2299,26 +2272,6 @@
         "tostatus": false,
         "complete": "true",
         "x": 910,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "67aee685.35afa8",
-        "type": "comment",
-        "z": "719ef0cd.4627",
-        "name": "HTTP",
-        "info": "",
-        "x": 1370,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "672fe4bb.cd091c",
-        "type": "comment",
-        "z": "719ef0cd.4627",
-        "name": "MQTT",
-        "info": "",
-        "x": 1370,
         "y": 260,
         "wires": []
     },
@@ -2496,7 +2449,7 @@
         "type": "debug",
         "z": "3c7e4464.321d3c",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2546,7 +2499,8 @@
         "y": 1140,
         "wires": [
             [
-                "6fcce95f.b68088"
+                "6fcce95f.b68088",
+                "4687dfbe.6a482"
             ]
         ]
     },
@@ -2555,12 +2509,12 @@
         "type": "debug",
         "z": "481c78ef.5a7c48",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "true",
-        "x": 1290,
+        "x": 1310,
         "y": 1140,
         "wires": []
     },
@@ -2606,7 +2560,7 @@
         "y": 60,
         "wires": [
             [
-                "639d91ec.cc4a1"
+                "a6818ade.334a28"
             ]
         ]
     },
@@ -2633,7 +2587,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 470,
-        "y": 160,
+        "y": 180,
         "wires": [
             [
                 "97347aa.1b43f88",
@@ -2650,7 +2604,7 @@
             "c91f874d.be1658"
         ],
         "x": 1095,
-        "y": 160,
+        "y": 180,
         "wires": []
     },
     {
@@ -2659,13 +2613,15 @@
         "z": "481c78ef.5a7c48",
         "name": "DI State",
         "links": [
-            "36f4b92a.38bb26"
+            "26c0c6b2.0dc25a",
+            "f4214476.6a3388"
         ],
         "x": 95,
-        "y": 160,
+        "y": 180,
         "wires": [
             [
-                "d7b3f99d.0a94e8"
+                "b68182cb.182a3",
+                "69a62595.312c6c"
             ]
         ]
     },
@@ -2680,7 +2636,7 @@
         "tostatus": false,
         "complete": "true",
         "x": 690,
-        "y": 200,
+        "y": 220,
         "wires": []
     },
     {
@@ -3091,7 +3047,7 @@
         "payloadType": "json",
         "repeat": "",
         "crontab": "",
-        "once": false,
+        "once": true,
         "onceDelay": 0.1,
         "x": 130,
         "y": 440,
@@ -3137,7 +3093,7 @@
         "id": "27210904.7bc256",
         "type": "function",
         "z": "481c78ef.5a7c48",
-        "name": "0",
+        "name": ">>>>>",
         "func": "return msg;",
         "outputs": 1,
         "noerr": 0,
@@ -3278,11 +3234,206 @@
                 "36f4b92a.38bb26"
             ],
             [
-                "36f4b92a.38bb26"
+                "f4214476.6a3388"
             ],
             [
                 "894bb0ab.91a17"
             ]
         ]
+    },
+    {
+        "id": "559606e.e96c1f8",
+        "type": "function",
+        "z": "c911378b.84a6a8",
+        "name": "config -> payload",
+        "func": "incoming = msg\noutgoing = {}\n\noutgoing.payload = incoming.config\n\nreturn outgoing;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 250,
+        "y": 100,
+        "wires": [
+            [
+                "ddf13262.82d41",
+                "a30cdf97.5281d"
+            ]
+        ]
+    },
+    {
+        "id": "2e7abeff.bd5cf2",
+        "type": "function",
+        "z": "c911378b.84a6a8",
+        "name": "config -> payload",
+        "func": "incoming = msg\noutgoing = []\n\noutgoing.payload = incoming.config\n\nreturn outgoing;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 250,
+        "y": 280,
+        "wires": [
+            [
+                "fb57cf81.ed7f4"
+            ]
+        ]
+    },
+    {
+        "id": "d673c970.b0f068",
+        "type": "debug",
+        "z": "c911378b.84a6a8",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 210,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "a30cdf97.5281d",
+        "type": "debug",
+        "z": "c911378b.84a6a8",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 430,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "26c0c6b2.0dc25a",
+        "type": "link out",
+        "z": "481c78ef.5a7c48",
+        "name": "",
+        "links": [
+            "182a138e.bd5b9c"
+        ],
+        "x": 1535,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "f4214476.6a3388",
+        "type": "link out",
+        "z": "3c7e4464.321d3c",
+        "name": "",
+        "links": [
+            "182a138e.bd5b9c"
+        ],
+        "x": 955,
+        "y": 340,
+        "wires": [],
+        "inputLabels": [
+            "DI"
+        ]
+    },
+    {
+        "id": "ed07de23.cc561",
+        "type": "comment",
+        "z": "3c7e4464.321d3c",
+        "name": "DIGITAL INPUT STATE",
+        "info": "",
+        "x": 1260,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "e4fc3478.f40c18",
+        "type": "inject",
+        "z": "bcfc1592.fd71f8",
+        "name": "Config after strartup",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "x": 200,
+        "y": 280,
+        "wires": [
+            [
+                "debb7dfc.40ee9"
+            ]
+        ]
+    },
+    {
+        "id": "4687dfbe.6a482",
+        "type": "function",
+        "z": "481c78ef.5a7c48",
+        "name": "enqueue_state_readout",
+        "func": "meters = global.get(\"meters\") || [];\ncircuit = msg.circuit\n\nmsg = meters.filter(m => (m.config.circuit_name == circuit & m.type == \"di_state\"));\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1370,
+        "y": 1180,
+        "wires": [
+            [
+                "29567ebe.a48ef2",
+                "26c0c6b2.0dc25a"
+            ]
+        ]
+    },
+    {
+        "id": "a6818ade.334a28",
+        "type": "function",
+        "z": "481c78ef.5a7c48",
+        "name": "config -> payload",
+        "func": "incoming = msg\noutgoing = {}\n\noutgoing.payload = incoming.config\n\nreturn outgoing;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 250,
+        "y": 60,
+        "wires": [
+            [
+                "639d91ec.cc4a1"
+            ]
+        ]
+    },
+    {
+        "id": "b68182cb.182a3",
+        "type": "function",
+        "z": "481c78ef.5a7c48",
+        "name": "config -> payload",
+        "func": "incoming = msg\noutgoing = {}\n\noutgoing.payload = incoming.config\n\nreturn outgoing;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 250,
+        "y": 180,
+        "wires": [
+            [
+                "d7b3f99d.0a94e8"
+            ]
+        ]
+    },
+    {
+        "id": "29567ebe.a48ef2",
+        "type": "debug",
+        "z": "481c78ef.5a7c48",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1570,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "69a62595.312c6c",
+        "type": "debug",
+        "z": "481c78ef.5a7c48",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 210,
+        "y": 220,
+        "wires": []
     }
 ]
