@@ -3030,7 +3030,7 @@
         "url": "http://127.0.0.1/json/all",
         "tls": "",
         "x": 250,
-        "y": 440,
+        "y": 480,
         "wires": [
             [
                 "a090805a.902c6"
@@ -3050,7 +3050,7 @@
         "once": true,
         "onceDelay": 0.1,
         "x": 130,
-        "y": 440,
+        "y": 480,
         "wires": [
             [
                 "733f08c5.833198"
@@ -3066,7 +3066,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 370,
-        "y": 440,
+        "y": 480,
         "wires": [
             [
                 "e81fff90.eaa22"
@@ -3082,7 +3082,7 @@
         "action": "str",
         "pretty": false,
         "x": 500,
-        "y": 440,
+        "y": 480,
         "wires": [
             [
                 "27210904.7bc256"
@@ -3455,5 +3455,55 @@
                 "1b7eb60d.a2299a"
             ]
         ]
+    },
+    {
+        "id": "8f1bd8c4.281308",
+        "type": "comment",
+        "z": "481c78ef.5a7c48",
+        "name": "Each change is sent through WS",
+        "info": "",
+        "x": 210,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "8f6d09c9.84b658",
+        "type": "comment",
+        "z": "481c78ef.5a7c48",
+        "name": "Initial state is obtained with HTTP JSON",
+        "info": "",
+        "x": 230,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "2788ad2a.1805c2",
+        "type": "comment",
+        "z": "481c78ef.5a7c48",
+        "name": "For each DI save data to context",
+        "info": "",
+        "x": 1150,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "a3a669ce.6f6a18",
+        "type": "comment",
+        "z": "481c78ef.5a7c48",
+        "name": "Request DI state",
+        "info": "",
+        "x": 240,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "2dd8d1b7.1e098e",
+        "type": "comment",
+        "z": "481c78ef.5a7c48",
+        "name": "Request DI counter value",
+        "info": "",
+        "x": 270,
+        "y": 20,
+        "wires": []
     }
 ]
