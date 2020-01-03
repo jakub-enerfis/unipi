@@ -24,7 +24,7 @@
         "id": "c911378b.84a6a8",
         "type": "tab",
         "label": "1.2_Read Modbus",
-        "disabled": false,
+        "disabled": true,
         "info": ""
     },
     {
@@ -72,7 +72,7 @@
         "tls": "7d4ef46f.03c40c",
         "clientid": "${MQTT_CLIENTID}",
         "usetls": true,
-        "compatmode": true,
+        "compatmode": false,
         "keepalive": "60",
         "cleansession": false,
         "birthTopic": "${MQTT_STATUS}",
@@ -105,7 +105,7 @@
     {
         "id": "7afba866.28a7d8",
         "type": "modbus-client",
-        "z": 0,
+        "z": "",
         "name": "RS485",
         "clienttype": "serial",
         "bufferCommands": true,
@@ -113,17 +113,17 @@
         "tcpHost": "127.0.0.1",
         "tcpPort": "502",
         "tcpType": "DEFAULT",
-        "serialPort": "/dev/extcomm/0/0",
+        "serialPort": "/dev/ttyNS0",
         "serialType": "RTU-BUFFERD",
         "serialBaudrate": "19200",
         "serialDatabits": "8",
         "serialStopbits": "1",
         "serialParity": "none",
         "serialConnectionDelay": "500",
-        "unit_id": 2,
-        "commandDelay": 20,
-        "clientTimeout": 1000,
-        "reconnectTimeout": 2000
+        "unit_id": "2",
+        "commandDelay": "20",
+        "clientTimeout": "1000",
+        "reconnectTimeout": "2000"
     },
     {
         "id": "cd4390dd.51895",
@@ -2232,20 +2232,6 @@
         "wires": []
     },
     {
-        "id": "87e5bd8a.66c3c",
-        "type": "debug",
-        "z": "481c78ef.5a7c48",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "x": 1070,
-        "y": 380,
-        "wires": []
-    },
-    {
         "id": "39ab7e61.3aa5a2",
         "type": "websocket in",
         "z": "481c78ef.5a7c48",
@@ -2427,7 +2413,6 @@
         "y": 380,
         "wires": [
             [
-                "87e5bd8a.66c3c",
                 "a56d5425.bfcf08"
             ]
         ]
@@ -2800,8 +2785,11 @@
         "name": "JSON",
         "method": "GET",
         "ret": "obj",
-        "url": "http://127.0.0.1/json/all",
+        "paytoqs": false,
+        "url": "http://127.0.0.1/rest/all",
         "tls": "",
+        "proxy": "",
+        "authType": "",
         "x": 250,
         "y": 480,
         "wires": [
@@ -2835,7 +2823,7 @@
         "type": "function",
         "z": "481c78ef.5a7c48",
         "name": "split",
-        "func": "list_of_values = msg.payload.data\n\nfor (var point of list_of_values) {\n    message = {}\n    message.payload = point\n    node.send(message)\n}",
+        "func": "list_of_values = msg.payload\n\nfor (var point of list_of_values) {\n    message = {}\n    message.payload = point\n    node.send(message)\n}",
         "outputs": 1,
         "noerr": 0,
         "x": 370,
@@ -3184,7 +3172,7 @@
         "type": "debug",
         "z": "481c78ef.5a7c48",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
